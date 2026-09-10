@@ -1,0 +1,268 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 1310" width="1300" height="1310" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="1300" height="1310" fill="#fdfcfa"/>
+<text x="44" y="46" font-size="23" fill="#1a1815" font-weight="700" text-anchor="start">Setup 1 — "Sweep"</text>
+<text x="44" y="70" font-size="12.5" fill="#6b6459" font-weight="400" text-anchor="start">4-pole 5-way super switch · push-pull volume · plain tone · RWRP pickup pair — ten voices, eight hum-cancelling</text>
+<rect x="100" y="92" width="210" height="96" rx="8" fill="#e8e3d9" stroke="#b9b1a3" stroke-width="1.8"/>
+<rect x="116" y="114" width="178" height="50" rx="4" fill="#dcd5c8" stroke="#b9b1a3" stroke-width="1.2"/>
+<circle cx="132.0" cy="138.0" r="5" fill="#b9b1a3"/>
+<circle cx="161.2" cy="138.0" r="5" fill="#b9b1a3"/>
+<circle cx="190.4" cy="138.0" r="5" fill="#b9b1a3"/>
+<circle cx="219.6" cy="138.0" r="5" fill="#b9b1a3"/>
+<circle cx="248.8" cy="138.0" r="5" fill="#b9b1a3"/>
+<circle cx="278.0" cy="138.0" r="5" fill="#b9b1a3"/>
+<text x="205.0" y="109" font-size="12.5" fill="#1a1815" font-weight="700" text-anchor="middle">NECK PICKUP  (screws toward nut)</text>
+<polyline points="130.0,182 130.0,206" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="137.0" y="220" font-size="9" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">NBk</text>
+<polyline points="167.5,182 167.5,206" fill="none" stroke="#8d8578" stroke-width="5.2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="167.5,182 167.5,206" fill="none" stroke="#ffffff" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="174.5" y="220" font-size="9" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">NW</text>
+<polyline points="205.0,182 205.0,206" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="212.0" y="220" font-size="9" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">NR</text>
+<polyline points="242.5,182 242.5,206" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="249.5" y="220" font-size="9" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">NG</text>
+<polyline points="280.0,182 280.0,206" fill="none" stroke="#9a8f7a" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 4"/>
+<text x="287.0" y="220" font-size="9" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">shld</text>
+<rect x="990" y="92" width="210" height="96" rx="8" fill="#e8e3d9" stroke="#b9b1a3" stroke-width="1.8"/>
+<rect x="1006" y="114" width="178" height="50" rx="4" fill="#dcd5c8" stroke="#b9b1a3" stroke-width="1.2"/>
+<circle cx="1022.0" cy="138.0" r="5" fill="#b9b1a3"/>
+<circle cx="1051.2" cy="138.0" r="5" fill="#b9b1a3"/>
+<circle cx="1080.4" cy="138.0" r="5" fill="#b9b1a3"/>
+<circle cx="1109.6" cy="138.0" r="5" fill="#b9b1a3"/>
+<circle cx="1138.8" cy="138.0" r="5" fill="#b9b1a3"/>
+<circle cx="1168.0" cy="138.0" r="5" fill="#b9b1a3"/>
+<text x="1095.0" y="109" font-size="12.5" fill="#1a1815" font-weight="700" text-anchor="middle">BRIDGE PICKUP  (screws toward bridge)</text>
+<polyline points="1020.0,182 1020.0,206" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1027.0" y="220" font-size="9" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">BBk</text>
+<polyline points="1057.5,182 1057.5,206" fill="none" stroke="#8d8578" stroke-width="5.2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1057.5,182 1057.5,206" fill="none" stroke="#ffffff" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1064.5" y="220" font-size="9" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">BW</text>
+<polyline points="1095.0,182 1095.0,206" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1102.0" y="220" font-size="9" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">BR</text>
+<polyline points="1132.5,182 1132.5,206" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1139.5" y="220" font-size="9" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">BG</text>
+<polyline points="1170.0,182 1170.0,206" fill="none" stroke="#9a8f7a" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 4"/>
+<text x="1177.0" y="220" font-size="9" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">shld</text>
+<polyline points="167.5,206 167.5,250 188,250" fill="none" stroke="#8d8578" stroke-width="5.2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="167.5,206 167.5,250 188,250" fill="none" stroke="#ffffff" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="205.0,206 205.0,250 188,250" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="188" cy="250" r="5.0" fill="#1a1815"/>
+<text x="188" y="272" font-size="10.5" fill="#1a1815" font-weight="700" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">NW+NR link</text>
+<polyline points="1057.5,206 1057.5,250 1068,250" fill="none" stroke="#8d8578" stroke-width="5.2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1057.5,206 1057.5,250 1068,250" fill="none" stroke="#ffffff" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1095.0,206 1095.0,250 1068,250" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1068" cy="250" r="5.0" fill="#1a1815"/>
+<text x="1068" y="272" font-size="10.5" fill="#1a1815" font-weight="700" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">BR+BW link</text>
+<polyline points="280.0,206 280.0,296 1244,296 1244,1160" fill="none" stroke="#9a8f7a" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 4"/>
+<polyline points="1170.0,206 1170.0,296" fill="none" stroke="#9a8f7a" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 4"/>
+<circle cx="1170.0" cy="296" r="4.5" fill="#9a8f7a"/>
+<rect x="150" y="508" width="980" height="256" rx="10" fill="#eae6dd" stroke="#b9b1a3" stroke-width="1.8"/>
+<text x="166" y="750" font-size="11.5" fill="#6b6459" font-weight="700" text-anchor="start">4-POLE 5-WAY SUPER SWITCH  ·  Fender 0992251000  ·  C = common</text>
+<line x1="162" y1="548" x2="1118" y2="548" stroke="#b9b1a3" stroke-width="1" stroke-dasharray="3 5"/>
+<circle cx="196" cy="548" r="7.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<text x="196" y="531" font-size="10.5" fill="#1a1815" font-weight="700" text-anchor="middle">P1</text>
+<text x="170" y="552" font-size="10.5" fill="#6b6459" font-weight="700" text-anchor="end">C</text>
+<circle cx="351.0" cy="548" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="521.0" cy="548" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="691.0" cy="548" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="861.0" cy="548" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="1031.0" cy="548" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<line x1="162" y1="602" x2="1118" y2="602" stroke="#b9b1a3" stroke-width="1" stroke-dasharray="3 5"/>
+<circle cx="196" cy="602" r="7.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<text x="196" y="585" font-size="10.5" fill="#1a1815" font-weight="700" text-anchor="middle">P2</text>
+<text x="170" y="606" font-size="10.5" fill="#6b6459" font-weight="700" text-anchor="end">C</text>
+<circle cx="351.0" cy="602" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="521.0" cy="602" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="691.0" cy="602" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="861.0" cy="602" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="1031.0" cy="602" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<line x1="162" y1="656" x2="1118" y2="656" stroke="#b9b1a3" stroke-width="1" stroke-dasharray="3 5"/>
+<circle cx="196" cy="656" r="7.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<text x="196" y="639" font-size="10.5" fill="#1a1815" font-weight="700" text-anchor="middle">P3</text>
+<text x="170" y="660" font-size="10.5" fill="#6b6459" font-weight="700" text-anchor="end">C</text>
+<circle cx="351.0" cy="656" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="521.0" cy="656" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="691.0" cy="656" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="861.0" cy="656" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="1031.0" cy="656" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<line x1="162" y1="710" x2="1118" y2="710" stroke="#b9b1a3" stroke-width="1" stroke-dasharray="3 5"/>
+<circle cx="196" cy="710" r="7.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<text x="196" y="693" font-size="10.5" fill="#1a1815" font-weight="700" text-anchor="middle">P4</text>
+<text x="170" y="714" font-size="10.5" fill="#6b6459" font-weight="700" text-anchor="end">C</text>
+<circle cx="351.0" cy="710" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="521.0" cy="710" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="691.0" cy="710" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="861.0" cy="710" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="1031.0" cy="710" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<text x="351.0" y="534" font-size="11.5" fill="#1a1815" font-weight="700" text-anchor="middle">1</text>
+<text x="521.0" y="534" font-size="11.5" fill="#1a1815" font-weight="700" text-anchor="middle">2</text>
+<text x="691.0" y="534" font-size="11.5" fill="#1a1815" font-weight="700" text-anchor="middle">3</text>
+<text x="861.0" y="534" font-size="11.5" fill="#1a1815" font-weight="700" text-anchor="middle">4</text>
+<text x="1031.0" y="534" font-size="11.5" fill="#1a1815" font-weight="700" text-anchor="middle">5</text>
+<polyline points="334.0,324 1132.5,324" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1132.5,206 1132.5,324" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1132.5" cy="324" r="4.5" fill="#1f8a3c"/>
+<polyline points="334.0,324 334.0,548 351.0,548" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="334.0" cy="324" r="4.5" fill="#1f8a3c"/>
+<text x="381.0" y="552" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">BG</text>
+<polyline points="674.0,324 674.0,548 691.0,548" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="674.0" cy="324" r="4.5" fill="#1f8a3c"/>
+<text x="721.0" y="552" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">BG</text>
+<polyline points="844.0,324 844.0,548 861.0,548" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="844.0" cy="324" r="4.5" fill="#1f8a3c"/>
+<text x="891.0" y="552" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">BG</text>
+<polyline points="345.0,348 1068,348" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1068,250 1068,348" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1068" cy="348" r="4.5" fill="#c62828"/>
+<polyline points="504.0,348 504.0,548 521.0,548" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="504.0" cy="348" r="4.5" fill="#c62828"/>
+<text x="551.0" y="552" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">BR/BW</text>
+<polyline points="345.0,348 345.0,602 351.0,602" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="345.0" cy="348" r="4.5" fill="#c62828"/>
+<text x="381.0" y="606" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">BR/BW</text>
+<polyline points="855.0,348 855.0,602 861.0,602" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="855.0" cy="348" r="4.5" fill="#c62828"/>
+<text x="891.0" y="606" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">BR/BW</text>
+<polyline points="368.0,372 1020.0,372" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1020.0,206 1020.0,372" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1020.0" cy="372" r="4.5" fill="#141414"/>
+<polyline points="515.0,372 515.0,602 521.0,602" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="515.0" cy="372" r="4.5" fill="#141414"/>
+<text x="551.0" y="606" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">BBk</text>
+<polyline points="685.0,372 685.0,602 691.0,602" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="685.0" cy="372" r="4.5" fill="#141414"/>
+<text x="721.0" y="606" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">BBk</text>
+<polyline points="368.0,372 368.0,710 351.0,710" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="368.0" cy="372" r="4.5" fill="#141414"/>
+<text x="381.0" y="714" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">BBk</text>
+<polyline points="130.0,396 1014.0,396" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="130.0,206 130.0,396" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="130.0" cy="396" r="4.5" fill="#141414"/>
+<polyline points="1014.0,396 1014.0,548 1031.0,548" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1014.0" cy="396" r="4.5" fill="#141414"/>
+<text x="1061.0" y="552" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">NBk</text>
+<polyline points="527.0,396 527.0,656 521.0,656" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="527.0" cy="396" r="4.5" fill="#141414"/>
+<text x="551.0" y="660" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">NBk</text>
+<polyline points="697.0,396 697.0,656 691.0,656" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="697.0" cy="396" r="4.5" fill="#141414"/>
+<text x="721.0" y="660" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">NBk</text>
+<polyline points="188,420 1025.0,420" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="188,250 188,420" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="188" cy="420" r="4.5" fill="#c62828"/>
+<polyline points="1025.0,420 1025.0,602 1031.0,602" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1025.0" cy="420" r="4.5" fill="#c62828"/>
+<text x="1061.0" y="606" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">NR/NW</text>
+<polyline points="867.0,420 867.0,656 861.0,656" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="867.0" cy="420" r="4.5" fill="#c62828"/>
+<text x="891.0" y="660" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">NR/NW</text>
+<polyline points="538.0,420 538.0,710 521.0,710" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="538.0" cy="420" r="4.5" fill="#c62828"/>
+<text x="551.0" y="714" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">NR/NW</text>
+<polyline points="242.5,444 1048.0,444" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="242.5,206 242.5,444" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="242.5" cy="444" r="4.5" fill="#1f8a3c"/>
+<polyline points="708.0,444 708.0,710 691.0,710" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="708.0" cy="444" r="4.5" fill="#1f8a3c"/>
+<text x="721.0" y="714" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">NG</text>
+<polyline points="878.0,444 878.0,710 861.0,710" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="878.0" cy="444" r="4.5" fill="#1f8a3c"/>
+<text x="891.0" y="714" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">NG</text>
+<polyline points="1048.0,444 1048.0,710 1031.0,710" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1048.0" cy="444" r="4.5" fill="#1f8a3c"/>
+<text x="1061.0" y="714" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">NG</text>
+<text x="381.0" y="660" font-size="9.5" fill="#a89f92" font-weight="400" text-anchor="start">n/c</text>
+<text x="1061.0" y="660" font-size="9.5" fill="#a89f92" font-weight="400" text-anchor="start">n/c</text>
+<circle cx="360" cy="900" r="58" fill="#efece6" stroke="#1a1815" stroke-width="2.2"/>
+<circle cx="360" cy="900" r="47" fill="none" stroke="#b9b1a3" stroke-width="1.2"/>
+<text x="360" y="898" font-size="12.5" fill="#1a1815" font-weight="700" text-anchor="middle">VOLUME</text>
+<text x="360" y="916" font-size="11" fill="#6b6459" font-weight="400" text-anchor="middle">500k audio</text>
+<rect x="306" y="831" width="108" height="33" rx="3" fill="#efece6" stroke="#b9b1a3" stroke-width="1.2"/>
+<circle cx="322" cy="834" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<text x="322" y="819" font-size="10.5" fill="#6b6459" font-weight="700" text-anchor="middle">1</text>
+<circle cx="360" cy="834" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<text x="360" y="819" font-size="10.5" fill="#6b6459" font-weight="700" text-anchor="middle">2</text>
+<circle cx="398" cy="834" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<text x="398" y="819" font-size="10.5" fill="#6b6459" font-weight="700" text-anchor="middle">3</text>
+<circle cx="720" cy="900" r="58" fill="#efece6" stroke="#1a1815" stroke-width="2.2"/>
+<circle cx="720" cy="900" r="47" fill="none" stroke="#b9b1a3" stroke-width="1.2"/>
+<text x="720" y="898" font-size="12.5" fill="#1a1815" font-weight="700" text-anchor="middle">TONE</text>
+<text x="720" y="916" font-size="11" fill="#6b6459" font-weight="400" text-anchor="middle">500k audio</text>
+<rect x="666" y="831" width="108" height="33" rx="3" fill="#efece6" stroke="#b9b1a3" stroke-width="1.2"/>
+<circle cx="682" cy="834" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<text x="682" y="819" font-size="10.5" fill="#6b6459" font-weight="700" text-anchor="middle">1</text>
+<circle cx="720" cy="834" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<text x="720" y="819" font-size="10.5" fill="#6b6459" font-weight="700" text-anchor="middle">2</text>
+<circle cx="758" cy="834" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<text x="758" y="819" font-size="10.5" fill="#6b6459" font-weight="700" text-anchor="middle">3</text>
+<rect x="280.0" y="986" width="160" height="92" rx="6" fill="#e4e0d7" stroke="#b9b1a3" stroke-width="1.8"/>
+<text x="360" y="977" font-size="11" fill="#6b6459" font-weight="700" text-anchor="middle">DPDT push-pull  —  DOWN = series, UP = parallel</text>
+<circle cx="314" cy="1016" r="6.0" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="360" cy="1016" r="6.0" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="406" cy="1016" r="6.0" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="314" cy="1054" r="6.0" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="360" cy="1054" r="6.0" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="406" cy="1054" r="6.0" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<text x="270.0" y="1020" font-size="11" fill="#6b6459" font-weight="700" text-anchor="end">A</text>
+<text x="270.0" y="1058" font-size="11" fill="#6b6459" font-weight="700" text-anchor="end">B</text>
+<rect x="1030" y="862" width="152" height="98" rx="8" fill="#e4e0d7" stroke="#b9b1a3" stroke-width="1.8"/>
+<text x="1106.0" y="886" font-size="11.5" fill="#1a1815" font-weight="700" text-anchor="middle">OUTPUT JACK</text>
+<circle cx="1046" cy="914" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<circle cx="1046" cy="942" r="6.5" fill="#ffffff" stroke="#1a1815" stroke-width="2"/>
+<text x="1062" y="918" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">tip</text>
+<text x="1062" y="946" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">sleeve</text>
+<polyline points="196,548 112,548 112,800 398,800 398,834" fill="none" stroke="#3d3d3d" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="196,602 88,602 88,982 360,982 360,1016" fill="none" stroke="#3d3d3d" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="196,656 64,656 64,1112 360,1112 360,1054" fill="none" stroke="#3d3d3d" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="196,710 40,710 40,1160" fill="none" stroke="#6f6f6f" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="314,1016 314,1035 360,1035 360,1054" fill="none" stroke="#3d3d3d" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="406,1016 462,1016 462,1160" fill="none" stroke="#6f6f6f" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="406,1054 492,1054 492,782 398,782 398,834" fill="none" stroke="#3d3d3d" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="398" cy="834" r="5.0" fill="#1a1815"/>
+<text x="314" y="1001" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="middle">A1 ser</text>
+<text x="360" y="1001" font-size="9.5" fill="#1a1815" font-weight="700" text-anchor="middle">A2 com</text>
+<text x="406" y="1001" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="middle">A3 par</text>
+<text x="314" y="1076" font-size="9.5" fill="#a89f92" font-weight="700" text-anchor="middle">B1 n/c</text>
+<text x="360" y="1076" font-size="9.5" fill="#1a1815" font-weight="700" text-anchor="middle">B2 com</text>
+<text x="406" y="1076" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="middle">B3 par</text>
+<polyline points="360,834 360,760 758,760 758,834" fill="none" stroke="#3d3d3d" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="758" cy="760" r="5.0" fill="#1a1815"/>
+<polyline points="758,760 990,760 990,914 1046,914" fill="none" stroke="#3d3d3d" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="405" y1="800" x2="439" y2="800" stroke="#1a1815" stroke-width="3"/>
+<line x1="405" y1="812" x2="439" y2="812" stroke="#1a1815" stroke-width="3"/>
+<text x="448" y="811" font-size="11" fill="#6b6459" font-weight="700" text-anchor="start">180 pF</text>
+<polyline points="360,834 360,806 405,806" fill="none" stroke="#3d3d3d" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="439,806 398,806" fill="none" stroke="#3d3d3d" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="611" y1="1036" x2="645" y2="1036" stroke="#1a1815" stroke-width="3"/>
+<line x1="611" y1="1048" x2="645" y2="1048" stroke="#1a1815" stroke-width="3"/>
+<text x="654" y="1047" font-size="11" fill="#6b6459" font-weight="700" text-anchor="start">0.022 µF</text>
+<polyline points="720,834 720,806 628,806 628,1025" fill="none" stroke="#3d3d3d" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="628,1059 628,1160" fill="none" stroke="#6f6f6f" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="682" y="860" font-size="10" fill="#a89f92" font-weight="400" text-anchor="middle">n/c</text>
+<polyline points="302,900 250,900 250,1160" fill="none" stroke="#6f6f6f" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="778,900 830,900 830,1160" fill="none" stroke="#6f6f6f" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1046,942 996,942 996,1160" fill="none" stroke="#6f6f6f" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="40,1160 1244,1160" fill="none" stroke="#6f6f6f" stroke-width="4.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="250" cy="1160" r="5" fill="#6f6f6f"/>
+<circle cx="462" cy="1160" r="5" fill="#6f6f6f"/>
+<circle cx="628" cy="1160" r="5" fill="#6f6f6f"/>
+<circle cx="830" cy="1160" r="5" fill="#6f6f6f"/>
+<circle cx="996" cy="1160" r="5" fill="#6f6f6f"/>
+<circle cx="1244" cy="1160" r="5" fill="#6f6f6f"/>
+<text x="1250" y="1165" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start"></text>
+<text x="40" y="1186" font-size="11" fill="#6b6459" font-weight="700" text-anchor="start">GROUND BUSS — star point at the VOLUME pot casing. Both pickup shields, both pot casings, jack sleeve, selector pole 4 and DPDT A3 all land here.</text>
+<text x="40" y="1216" font-size="11" fill="#6b6459" font-weight="700" text-anchor="start">WIRE COLOURS  (Seymour Duncan 4-conductor code)</text>
+<polyline points="40,1234 70,1234" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="78" y="1238" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">Black</text>
+<polyline points="158,1234 188,1234" fill="none" stroke="#8d8578" stroke-width="5.2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="158,1234 188,1234" fill="none" stroke="#ffffff" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="196" y="1238" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">White</text>
+<polyline points="276,1234 306,1234" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="314" y="1238" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">Red</text>
+<polyline points="394,1234 424,1234" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="432" y="1238" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">Green</text>
+<polyline points="512,1234 542,1234" fill="none" stroke="#9a8f7a" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 4"/>
+<text x="550" y="1238" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">Bare shield</text>
+<polyline points="630,1234 660,1234" fill="none" stroke="#6f6f6f" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="668" y="1238" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">Ground buss</text>
+<text x="40" y="1262" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">Crossing wires are NOT connected unless a solid junction dot is shown.</text>
+</svg>
