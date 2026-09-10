@@ -138,6 +138,10 @@
     margin-right:5px;vertical-align:middle}
   .cell.hums .dot{background:var(--warn)}
 
+  .nav-sep{display:inline-block;width:1px;height:16px;background:var(--line-2);margin:0 8px;flex:none}
+  .ref-start{border-top:3px double var(--line-2);margin-top:14px}
+  .ref-start h3{color:var(--ink-2)}
+
   /* collapsible alternates */
   details.alt{background:var(--panel);border:1px solid var(--line);border-radius:12px;
     box-shadow:var(--shadow);overflow:hidden}
@@ -216,196 +220,70 @@
 
 <nav><div class="wrap">
   <a class="brand" href="#top">HH Wiring</a>
-  <a href="#pick">Pick one</a><a href="#setup1">Sweep</a><a href="#setup2">Curated</a>
-  <a href="#setup3">Quiet</a><a href="#pickups">Pickups</a><a href="#build">Build</a>
-  <a href="#matrix">Pole matrix</a><a href="#bom">BOM</a><a href="#explorer">Explorer</a>
-  <a href="#taxonomy">Sounds</a><a href="#vendors">Vendors</a>
+  <a href="#guitar">Guitar</a><a href="#pickups">Pickups</a><a href="#setup1">Wiring</a>
+  <a href="#build">Bench</a><a href="#bom">Parts</a><a href="#matrix">Verify</a>
+  <span class="nav-sep"></span>
+  <a href="#reference">Reference</a><a href="#alternatives">Other options</a>
+  <a href="#explorer">Explorer</a><a href="#taxonomy">Sounds</a><a href="#vendors">Vendors</a>
 </div></nav>
 
 <div class="wrap" id="top">
 <header>
-  <h1>Two humbuckers, one volume, one tone, one selector</h1>
-  <p class="lede">Three buildable wiring schemes for a semi-hollow LP-style guitar with two
-  custom-wound PAF-class humbuckers. Pick one, hand the builder its diagram.</p>
-  <div class="rig">
-    <span class="chip">Rear control cavity</span>
-    <span class="chip">Blade slot routed</span>
-    <span class="chip">4-conductor + bare shield</span>
-    <span class="chip">Seymour Duncan colour code</span>
+  <h1>Semi-hollow HH — build spec</h1>
+  <p class="lede">Two custom-wound humbuckers, one volume, one tone, one 5-way blade.
+  <b>Setup 1 "Sweep"</b>: ten voices, eight of them dead quiet. Everything the builder and the
+  pickup winder need is in the three specs below; the reasoning is further down.</p>
+  <div class="cards" style="margin-top:22px">
+    <div class="card"><span class="rank alt">Spec 1</span><h4>Guitar</h4>
+      <p class="one">Semi-hollow LP-style, rear cavity, blade slot already routed.</p>
+      <div class="jump"><a href="#guitar">Full spec</a></div></div>
+    <div class="card"><span class="rank alt">Spec 2</span><h4>Pickups</h4>
+      <p class="one">PAF class, 4-conductor, <b>RWRP pair</b> — order this before anything else.</p>
+      <div class="jump"><a href="#pickups">Full spec</a></div></div>
+    <div class="card rec"><span class="rank">Spec 3</span><h4>Wiring</h4>
+      <p class="one">4-pole 5-way super switch + push-pull volume. Three shop sheets.</p>
+      <div class="jump"><a href="#setup1">Full spec</a><a href="#wiring1c">Build sheet</a></div></div>
   </div>
 </header>
 
-<!-- ================= PICK ================= -->
-<section id="pick">
-  <h2>At a glance</h2>
-  <h3>Pick one</h3>
-  <div class="cards">
-
-    <div class="card rec">
-      <span class="rank">Recommended</span>
-      <h4>1 — Sweep</h4>
-      <p class="one">Widest range. Bridge→neck arc on the blade, one rule on the knob.</p>
-      <dl>
-        <dt>Selector</dt><dd>4-pole 5-way super switch</dd>
-        <dt>Volume</dt><dd>push-pull: series / parallel</dd>
-        <dt>Tone</dt><dd>plain</dd>
-        <dt>Pickups</dt><dd><b>RWRP pair required</b></dd>
-      </dl>
-      <div class="stats">
-        <span><b>10</b> voices</span><span class="g"><b>8</b> hum-free</span>
-        <span><b>$90–120</b></span><span class="r">hard build</span>
-      </div>
-      <div class="jump"><a href="#setup1">Details</a><a href="#wiring1">Wiring</a>
-        <a href="#wiring1b">Switch detail</a><a href="#wiring1c">Build sheet</a></div>
-    </div>
-
-    <div class="card">
-      <span class="rank alt">Simplest</span>
-      <h4>2 — Curated</h4>
-      <p class="one">Classic three sounds plus a boost and splits. Nothing subtle can go wrong.</p>
-      <dl>
-        <dt>Selector</dt><dd>3-way blade</dd>
-        <dt>Volume</dt><dd>push-pull: both HB in series</dd>
-        <dt>Tone</dt><dd>push-pull: coil split</dd>
-        <dt>Pickups</dt><dd><b>prefers a conventional pair</b></dd>
-      </dl>
-      <div class="stats">
-        <span><b>7</b> voices</span><span class="a"><b>4</b> hum-free</span>
-        <span><b>$80–100</b></span><span class="g">easy build</span>
-      </div>
-      <div class="jump"><a href="#setup2">Expand details</a><a href="#wiring2">Wiring</a></div>
-    </div>
-
-    <div class="card">
-      <span class="rank alt">Quietest</span>
-      <h4>3 — Quiet</h4>
-      <p class="one">No split anywhere. Every position dead silent.</p>
-      <dl>
-        <dt>Selector</dt><dd>3-way blade</dd>
-        <dt>Volume</dt><dd>push-pull: bridge series / parallel</dd>
-        <dt>Tone</dt><dd>push-pull: neck series / parallel</dd>
-        <dt>Pickups</dt><dd>either pair works</dd>
-      </dl>
-      <div class="stats">
-        <span><b>8</b> voices</span><span class="g"><b>8</b> hum-free</span>
-        <span><b>$78–98</b></span><span class="g">easy build</span>
-      </div>
-      <div class="jump"><a href="#setup3">Expand details</a><a href="#wiring3">Wiring</a></div>
-    </div>
-  </div>
-
-  <div class="callout warn"><span class="tag">Decide the pickups before you order them</span>
-    <p>Setups 1 and 2 want <b>opposite</b> pickup specs and cannot both be built from one pair.
-    Setup 1 needs an RWRP pair; Setup 2's split position only cancels hum with a conventional pair.
-    Setup 3 works with either. See <a href="#pickups">Pickups</a>.</p></div>
-</section>
-
-<!-- ================= SETUP 1 ================= -->
-<section id="setup1">
-  <h2>Setup 1</h2>
-  <h3>"Sweep" — recommended</h3>
+<!-- ================= GUITAR ================= -->
+<section id="guitar">
+  <h2>Spec · 1 of 3</h2>
+  <h3>The instrument</h3>
   <div class="scroll"><table>
-    <thead><tr><th>Blade</th><th>Volume DOWN — series</th><th>Volume UP — parallel</th></tr></thead>
+    <thead><tr><th>Item</th><th>Spec</th><th>Why it matters here</th></tr></thead>
     <tbody>
-      <tr><td><b>1</b> bridge</td><td><span class="id">H1</span> bridge humbucker</td><td><span class="id">X1</span> bridge slug split <span class="no">hums</span></td></tr>
-      <tr><td><b>2</b></td><td><span class="id">S1</span> outer coils series</td><td><span class="id">Q1</span> outer coils parallel</td></tr>
-      <tr><td><b>3</b></td><td><span class="id">H4</span> both HB series, +6 dB</td><td><span class="id">H3</span> both HB parallel</td></tr>
-      <tr><td><b>4</b></td><td><span class="id">S2</span> inner coils series</td><td><span class="id">Q2</span> inner coils parallel</td></tr>
-      <tr><td><b>5</b> neck</td><td><span class="id">H2</span> neck humbucker</td><td><span class="id">X2</span> neck screw split <span class="no">hums</span></td></tr>
+      <tr><td>Body</td><td>Semi-hollow Les Paul style, mahogany back, carved maple top,
+        single f-hole upper bout</td><td>Feedback-prone at high gain — a wax-potting problem,
+        not a wiring one</td></tr>
+      <tr><td>Neck</td><td>ESP modern, 24 fret, maple, ebony fretboard</td>
+        <td>24 frets pushes the neck pickup toward the bridge; string excursion there makes it
+        read 2–3 dB hotter than the bridge</td></tr>
+      <tr><td>Bridge</td><td>Tune-o-matic + stop bar</td><td>Ground the bridge to the star point</td></tr>
+      <tr><td>Tuners</td><td>Gotoh locking</td><td>—</td></tr>
+      <tr><td><b>Control cavity</b></td><td><b>Rear, with cover</b></td>
+        <td>No limit on switch size or push-pull depth. Rework is easy — this is why the
+        24-lug switch is viable at all</td></tr>
+      <tr><td><b>Selector</b></td><td><b>Blade slot already routed</b></td>
+        <td>A 5-way is native. Confirm ≥34 mm clearance under the slot: the super switch is a
+        two-wafer part</td></tr>
+      <tr><td>Pot shafts</td><td>Long bushing, ¾" / 19 mm</td><td>Needed to clear the carved cap</td></tr>
+      <tr><td>Pickups</td><td>2× custom-wound, PAF class, 4-conductor + bare shield</td>
+        <td>Spec still open — see <a href="#pickups">Pickups</a>. Order before wiring.</td></tr>
     </tbody>
   </table></div>
-  <p>The push-pull means one thing in every detent: <b>down adds series, up goes parallel.</b>
-  Volume down is the loud column, up is the bright one; levels within each row are close enough to
-  switch mid-song. The tone push-pull is unused — both poles spare.</p>
-  <p><b>Limits.</b> Positions 1-up and 5-up are true splits and hum. No partial taps: the only
-  insertion point is shared with six other states. The naive version of this circuit doesn't fit
-  four poles — see <a href="#matrix">Pole matrix</a> before soldering.</p>
-  <figure id="wiring1"><div class="paper"><a href="diagrams/setup1-sweep.svg">
-    <img src="diagrams/setup1-sweep.svg" alt="Setup 1 Sweep wiring diagram"></a></div>
-    <figcaption><b>Sheet 1 — harness overview.</b>
-    <a href="diagrams/setup1-sweep.svg">Open full size</a> · crossing wires are not connected
-    unless a solid junction dot is shown</figcaption></figure>
-
-  <figure id="wiring1b"><div class="paper"><a href="diagrams/setup1-superswitch.svg">
-    <img src="diagrams/setup1-superswitch.svg" alt="Setup 1 super switch wiring detail"></a></div>
-    <figcaption><b>Sheet 2 — super switch detail.</b> All 24 lugs, the six nets that land on them,
-    and which jumpers cross pole boundaries.
-    <a href="diagrams/setup1-superswitch.svg">Open full size</a></figcaption></figure>
-
-  <figure id="wiring1c"><div class="paper"><a href="diagrams/setup1-build.svg">
-    <img src="diagrams/setup1-build.svg" alt="Setup 1 build sheet"></a></div>
-    <figcaption><b>Sheet 3 — applying it to your switch.</b> Orientation, the meter procedure that
-    settles which lug is position 1, a tick-box checklist for all 24 lugs, solder order and a bench
-    test. <a href="diagrams/setup1-build.svg">Open full size</a></figcaption></figure>
-
-  <div class="callout warn"><span class="tag">Give the builder all three sheets</span>
-    <p>Four of the six nets jumper <b>across</b> poles, and three wire colours appear twice
-    (two blacks, two reds, two greens) on different poles. Sheet 2 numbers every net W1–W6 so they
-    can't be confused. Sheet 3 is the one that matters at the bench: which end of a real switch is
-    position 1 depends on how it is mounted, so it must be established with a meter before anything
-    is soldered — the drawing cannot know it.</p></div>
 </section>
 
-<!-- ================= SETUP 2 ================= -->
-<section id="setup2">
-  <details class="alt">
-    <summary><span class="sum-k">Setup 2</span><span class="sum-t">"Curated" — simplest</span><span class="sum-m">3-way blade · 7 voices, 4 hum-free · easy build · ~$80–100</span><span class="sum-x"></span></summary>
-    <div class="det">
-
-  <div class="scroll"><table>
-    <thead><tr><th>Control</th><th>Function</th></tr></thead>
-    <tbody>
-      <tr><td>3-way blade</td><td>bridge / both / neck → <span class="id">H1 H3 H2</span></td></tr>
-      <tr><td>Volume push-pull</td><td>both humbuckers in series → <span class="id">H4</span>, +6 dB</td></tr>
-      <tr><td>Tone push-pull</td><td>master coil split → <span class="id">X1 X2</span> + both-split</td></tr>
-    </tbody>
-  </table></div>
-  <div class="callout warn"><span class="tag">Two limits</span>
-    <p><b>Series kills the neck position.</b> With the volume pulled up the neck hot leaves the
-    blade, so blade 3 is silent. Series is a middle/bridge override — the same wart a factory Jimmy
-    Page harness has.</p>
-    <p><b>The both-split position needs a conventional pair.</b> Grounding a coil junction always
-    leaves the coil next to the hot lead, so both-split resolves to neck screw + bridge slug — the
-    diagonal pair. That cancels with a conventional pair and <b>adds hum with an RWRP pair.</b>
-    Built on Setup 1's pickups you get 7 voices, 4 quiet; on a conventional pair, 7 voices, 5 quiet
-    including a proper quack.</p></div>
-  <figure id="wiring2"><div class="paper"><a href="diagrams/setup2-curated.svg">
-    <img src="diagrams/setup2-curated.svg" alt="Setup 2 Curated wiring diagram"></a></div>
-    <figcaption><a href="diagrams/setup2-curated.svg">Open full size</a></figcaption></figure>
-    </div>
-  </details>
-</section>
-
-<!-- ================= SETUP 3 ================= -->
-<section id="setup3">
-  <details class="alt">
-    <summary><span class="sum-k">Setup 3</span><span class="sum-t">"Quiet" — no splits anywhere</span><span class="sum-m">3-way blade · 8 voices, all hum-free · easy build · ~$78–98</span><span class="sum-x"></span></summary>
-    <div class="det">
-
-  <div class="scroll"><table>
-    <thead><tr><th>Blade</th><th>V↓ T↓</th><th>V↑ T↓</th><th>V↓ T↑</th><th>V↑ T↑</th></tr></thead>
-    <tbody>
-      <tr><td><b>Bridge</b></td><td><span class="id">H1</span></td><td><span class="id">P1</span></td><td class="dup">dup</td><td class="dup">dup</td></tr>
-      <tr><td><b>Both</b></td><td><span class="id">H3</span></td><td>bridge-∥ + neck-series</td><td>bridge-series + neck-∥</td><td>both parallel</td></tr>
-      <tr><td><b>Neck</b></td><td><span class="id">H2</span></td><td class="dup">dup</td><td><span class="id">P2</span></td><td class="dup">dup</td></tr>
-    </tbody>
-  </table></div>
-  <p>Each push-pull switches its own pickup's coils between series and parallel — the Ibanez
-  Tri-Sound idea. Parallel is −6 dB and about an octave brighter, and still cancels hum because the
-  coils stay paired.</p>
-  <p><b>Limits.</b> No H4 — both DPDTs are spent on the pickups, so nothing is left to series-link
-  them. Nothing here barks like a real single coil.</p>
-  <figure id="wiring3"><div class="paper"><a href="diagrams/setup3-quiet.svg">
-    <img src="diagrams/setup3-quiet.svg" alt="Setup 3 Quiet wiring diagram"></a></div>
-    <figcaption><a href="diagrams/setup3-quiet.svg">Open full size</a></figcaption></figure>
-    </div>
-  </details>
-</section>
-
-<!-- ================= PICKUPS ================= -->
 <section id="pickups">
-  <h2>Order first</h2>
+  <h2>Spec · 2 of 3</h2>
   <h3>Pickup spec</h3>
+  <div class="callout"><span class="tag">The order</span>
+  <p><b>Two PAF-class 4-conductor humbuckers, separate bare shield, matched within 10% per-coil
+  DCR, wound as an RWRP pair</b> — bridge magnet reversed relative to neck. Order these before
+  anything else; the wiring depends on it.</p>
+  <p>RWRP is not optional for this build. Setup 1 needs it, and a conventional pair would leave
+  blade positions 2 and 4 humming instead of silent. (It is also why Setup 2 in the reference
+  section cannot be built from the same pair — its split wants the opposite spec.)</p></div>
   <p>Two coils cancel hum only if they are reverse-wound <b>and</b> reverse-polarity relative to
   each other. Inside one humbucker that is always true. Across two pickups it depends on how the
   pair was built — and that decides which setups are available to you.</p>
@@ -449,9 +327,53 @@
   </ol>
 </section>
 
-<!-- ================= BUILD ================= -->
+<section id="setup1">
+  <h2>Spec · 3 of 3</h2>
+  <h3>Wiring — "Sweep"</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>Blade</th><th>Volume DOWN — series</th><th>Volume UP — parallel</th></tr></thead>
+    <tbody>
+      <tr><td><b>1</b> bridge</td><td><span class="id">H1</span> bridge humbucker</td><td><span class="id">X1</span> bridge slug split <span class="no">hums</span></td></tr>
+      <tr><td><b>2</b></td><td><span class="id">S1</span> outer coils series</td><td><span class="id">Q1</span> outer coils parallel</td></tr>
+      <tr><td><b>3</b></td><td><span class="id">H4</span> both HB series, +6 dB</td><td><span class="id">H3</span> both HB parallel</td></tr>
+      <tr><td><b>4</b></td><td><span class="id">S2</span> inner coils series</td><td><span class="id">Q2</span> inner coils parallel</td></tr>
+      <tr><td><b>5</b> neck</td><td><span class="id">H2</span> neck humbucker</td><td><span class="id">X2</span> neck screw split <span class="no">hums</span></td></tr>
+    </tbody>
+  </table></div>
+  <p>The push-pull means one thing in every detent: <b>down adds series, up goes parallel.</b>
+  Volume down is the loud column, up is the bright one; levels within each row are close enough to
+  switch mid-song. The tone push-pull is unused — both poles spare.</p>
+  <p><b>Limits.</b> Positions 1-up and 5-up are true splits and hum. No partial taps: the only
+  insertion point is shared with six other states. The naive version of this circuit doesn't fit
+  four poles — see <a href="#matrix">Pole matrix</a> before soldering.</p>
+  <figure id="wiring1"><div class="paper"><a href="diagrams/setup1-sweep.svg">
+    <img src="diagrams/setup1-sweep.svg" alt="Setup 1 Sweep wiring diagram"></a></div>
+    <figcaption><b>Sheet 1 — harness overview.</b>
+    <a href="diagrams/setup1-sweep.svg">Open full size</a> · crossing wires are not connected
+    unless a solid junction dot is shown</figcaption></figure>
+
+  <figure id="wiring1b"><div class="paper"><a href="diagrams/setup1-superswitch.svg">
+    <img src="diagrams/setup1-superswitch.svg" alt="Setup 1 super switch wiring detail"></a></div>
+    <figcaption><b>Sheet 2 — super switch detail.</b> All 24 lugs, the six nets that land on them,
+    and which jumpers cross pole boundaries.
+    <a href="diagrams/setup1-superswitch.svg">Open full size</a></figcaption></figure>
+
+  <figure id="wiring1c"><div class="paper"><a href="diagrams/setup1-build.svg">
+    <img src="diagrams/setup1-build.svg" alt="Setup 1 build sheet"></a></div>
+    <figcaption><b>Sheet 3 — applying it to your switch.</b> Orientation, the meter procedure that
+    settles which lug is position 1, a tick-box checklist for all 24 lugs, solder order and a bench
+    test. <a href="diagrams/setup1-build.svg">Open full size</a></figcaption></figure>
+
+  <div class="callout warn"><span class="tag">Give the builder all three sheets</span>
+    <p>Four of the six nets jumper <b>across</b> poles, and three wire colours appear twice
+    (two blacks, two reds, two greens) on different poles. Sheet 2 numbers every net W1–W6 so they
+    can't be confused. Sheet 3 is the one that matters at the bench: which end of a real switch is
+    position 1 depends on how it is mounted, so it must be established with a meter before anything
+    is soldered — the drawing cannot know it.</p></div>
+</section>
+
 <section id="build">
-  <h2>Bench</h2>
+  <h2>Wiring spec · bench</h2>
   <h3>Shared build details</h3>
   <div class="scroll"><table>
     <thead><tr><th>Item</th><th>Value</th><th>Why</th></tr></thead>
@@ -484,9 +406,57 @@
   </ol>
 </section>
 
-<!-- ================= MATRIX ================= -->
+<section id="bom">
+  <h2>Wiring spec · parts</h2>
+  <h3>Bill of materials</h3>
+  <p class="mut">Indicative USD, before shipping. Pickups extra: $200–500/pair.</p>
+
+  <h4>Setup 1 — harness ≈ $90–120</h4>
+  <div class="scroll"><table>
+    <thead><tr><th>#</th><th>Part</th><th>Spec</th><th>Part number</th><th>~$</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Selector</td><td>4-pole 5-way Super Switch, 24 lugs</td><td class="mono">Fender 0992251000 · Allparts EP-0078-000 · StewMac I-3200</td><td>21–35</td></tr>
+      <tr><td></td><td><em>substitute</em></td><td>4P5T, slimmer body</td><td class="mono">Schaller Megaswitch M, 15310006</td><td>~22</td></tr>
+      <tr><td>1</td><td>Volume pot</td><td>CTS 450S DPDT push-pull, 500 kΩ audio, ¾" bushing</td><td class="mono">StewMac #0229</td><td>~13</td></tr>
+      <tr><td>1</td><td>Tone pot</td><td>CTS 500 kΩ audio, plain, long bushing</td><td class="mono">CTS 450S 3912</td><td>~8</td></tr>
+      <tr><td>1</td><td>Tone cap</td><td>0.022 µF film, 200 V+</td><td class="mono">Orange Drop 715P · Mallory 150</td><td>2–5</td></tr>
+      <tr><td>1</td><td>Treble bleed</td><td>180 pF silver mica</td><td>—</td><td>~1</td></tr>
+      <tr><td>1</td><td>Jack</td><td>Mono ¼", long-frame</td><td class="mono">Switchcraft #11</td><td>~5</td></tr>
+      <tr><td>2</td><td>Knobs</td><td>Split-shaft for the push-pull</td><td>—</td><td>10–30</td></tr>
+      <tr><td>—</td><td>Wire + foil</td><td>Single-core shielded; conductive copper tape</td><td class="mono">Gavitt · Mogami</td><td>~22</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout warn"><p>The super switch is a <b>two-wafer</b> part. Confirm ≥34 mm
+  (ideally 36.5 mm) clearance under the blade slot before ordering.</p></div>
+
+  <h4>Setup 2 ≈ $80–100 · Setup 3 ≈ $78–98</h4>
+  <div class="scroll"><table>
+    <thead><tr><th>#</th><th>Part</th><th>Spec</th><th>~$</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Selector</td><td>3-way blade, 2-pole — Oak Grigsby / CRL</td><td>~12</td></tr>
+      <tr><td>2</td><td>Pots</td><td>CTS 450S DPDT push-pull, 500 kΩ audio, long bushing</td><td>~26</td></tr>
+      <tr><td>1</td><td>Tone cap</td><td>0.022 µF film</td><td>2–5</td></tr>
+      <tr><td>2</td><td>Partial taps</td><td>1.1 kΩ neck + 2.2 kΩ bridge, ¼ W — <b>Setup 2 only</b></td><td>&lt;2</td></tr>
+      <tr><td>—</td><td>Bleed, jack, wire, foil</td><td>as Setup 1</td><td>~38</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4>Tools</h4>
+  <p>Soldering iron 40 W+ with a chisel tip (a pencil tip won't heat a pot casing) · multimeter ·
+  magnet polarity tester or compass · clip leads for breadboarding · solder wick.</p>
+
+  <h4>Don't buy</h4>
+  <ul>
+    <li><b>Partial taps for Setup 1</b> — no valid insertion point.</li>
+    <li><b>A standard 2-pole 5-way blade</b> — both poles go to pickup selection, so it cannot
+      express an HH map. This is why PRS uses a proprietary blade and Fender the 4-pole switch.</li>
+    <li><b>A Revstar "Dry Switch" at the published values</b> — 330 kΩ ∥ 3300 pF corners at 146 Hz,
+      not 3 kHz. Use ~470 kΩ ∥ 680 pF upstream of the volume pot, and measure it.</li>
+  </ul>
+</section>
+
 <section id="matrix">
-  <h2>Verification</h2>
+  <h2>Wiring spec · verification</h2>
   <h3>Pole matrix — Setup 1</h3>
   <p>Written before any schematic, because these failures are invisible on a drawing:
   <b>a switch lug is not a switching node</b> (everything on one lug is permanently connected);
@@ -548,57 +518,76 @@
   </ul>
 </section>
 
-<!-- ================= BOM ================= -->
-<section id="bom">
-  <h2>Parts</h2>
-  <h3>Bill of materials</h3>
-  <p class="mut">Indicative USD, before shipping. Pickups extra: $200–500/pair.</p>
-
-  <h4>Setup 1 — harness ≈ $90–120</h4>
-  <div class="scroll"><table>
-    <thead><tr><th>#</th><th>Part</th><th>Spec</th><th>Part number</th><th>~$</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td>Selector</td><td>4-pole 5-way Super Switch, 24 lugs</td><td class="mono">Fender 0992251000 · Allparts EP-0078-000 · StewMac I-3200</td><td>21–35</td></tr>
-      <tr><td></td><td><em>substitute</em></td><td>4P5T, slimmer body</td><td class="mono">Schaller Megaswitch M, 15310006</td><td>~22</td></tr>
-      <tr><td>1</td><td>Volume pot</td><td>CTS 450S DPDT push-pull, 500 kΩ audio, ¾" bushing</td><td class="mono">StewMac #0229</td><td>~13</td></tr>
-      <tr><td>1</td><td>Tone pot</td><td>CTS 500 kΩ audio, plain, long bushing</td><td class="mono">CTS 450S 3912</td><td>~8</td></tr>
-      <tr><td>1</td><td>Tone cap</td><td>0.022 µF film, 200 V+</td><td class="mono">Orange Drop 715P · Mallory 150</td><td>2–5</td></tr>
-      <tr><td>1</td><td>Treble bleed</td><td>180 pF silver mica</td><td>—</td><td>~1</td></tr>
-      <tr><td>1</td><td>Jack</td><td>Mono ¼", long-frame</td><td class="mono">Switchcraft #11</td><td>~5</td></tr>
-      <tr><td>2</td><td>Knobs</td><td>Split-shaft for the push-pull</td><td>—</td><td>10–30</td></tr>
-      <tr><td>—</td><td>Wire + foil</td><td>Single-core shielded; conductive copper tape</td><td class="mono">Gavitt · Mogami</td><td>~22</td></tr>
-    </tbody>
-  </table></div>
-  <div class="callout warn"><p>The super switch is a <b>two-wafer</b> part. Confirm ≥34 mm
-  (ideally 36.5 mm) clearance under the blade slot before ordering.</p></div>
-
-  <h4>Setup 2 ≈ $80–100 · Setup 3 ≈ $78–98</h4>
-  <div class="scroll"><table>
-    <thead><tr><th>#</th><th>Part</th><th>Spec</th><th>~$</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td>Selector</td><td>3-way blade, 2-pole — Oak Grigsby / CRL</td><td>~12</td></tr>
-      <tr><td>2</td><td>Pots</td><td>CTS 450S DPDT push-pull, 500 kΩ audio, long bushing</td><td>~26</td></tr>
-      <tr><td>1</td><td>Tone cap</td><td>0.022 µF film</td><td>2–5</td></tr>
-      <tr><td>2</td><td>Partial taps</td><td>1.1 kΩ neck + 2.2 kΩ bridge, ¼ W — <b>Setup 2 only</b></td><td>&lt;2</td></tr>
-      <tr><td>—</td><td>Bleed, jack, wire, foil</td><td>as Setup 1</td><td>~38</td></tr>
-    </tbody>
-  </table></div>
-
-  <h4>Tools</h4>
-  <p>Soldering iron 40 W+ with a chisel tip (a pencil tip won't heat a pot casing) · multimeter ·
-  magnet polarity tester or compass · clip leads for breadboarding · solder wick.</p>
-
-  <h4>Don't buy</h4>
-  <ul>
-    <li><b>Partial taps for Setup 1</b> — no valid insertion point.</li>
-    <li><b>A standard 2-pole 5-way blade</b> — both poles go to pickup selection, so it cannot
-      express an HH map. This is why PRS uses a proprietary blade and Fender the 4-pole switch.</li>
-    <li><b>A Revstar "Dry Switch" at the published values</b> — 330 kΩ ∥ 3300 pF corners at 146 Hz,
-      not 3 kHz. Use ~470 kΩ ∥ 680 pF upstream of the volume pot, and measure it.</li>
-  </ul>
+<!-- ================= REFERENCE ================= -->
+<section id="reference" class="ref-start">
+  <h2>Below this line</h2>
+  <h3>Reference — how we got here</h3>
+  <p>Nothing below is needed to build the guitar. It is the alternatives that were considered, the
+  full palette of sounds two humbuckers can make, and the vendor survey the design was drawn from.</p>
 </section>
 
-<!-- ================= EXPLORER ================= -->
+<!-- ================= ALTERNATIVES ================= -->
+<section id="alternatives">
+  <h2>Reference</h2>
+  <h3>The two options not chosen</h3>
+  <p>Both are buildable and both were verified. Setup 1 won on range — ten voices against seven and
+  eight — and because its push-pull means one thing in every detent. Setup 2 is the easy build;
+  Setup 3 is the silent one.</p>
+<section id="setup2">
+  <details class="alt">
+    <summary><span class="sum-k">Setup 2</span><span class="sum-t">"Curated" — simplest</span><span class="sum-m">3-way blade · 7 voices, 4 hum-free · easy build · ~$80–100</span><span class="sum-x"></span></summary>
+    <div class="det">
+
+  <div class="scroll"><table>
+    <thead><tr><th>Control</th><th>Function</th></tr></thead>
+    <tbody>
+      <tr><td>3-way blade</td><td>bridge / both / neck → <span class="id">H1 H3 H2</span></td></tr>
+      <tr><td>Volume push-pull</td><td>both humbuckers in series → <span class="id">H4</span>, +6 dB</td></tr>
+      <tr><td>Tone push-pull</td><td>master coil split → <span class="id">X1 X2</span> + both-split</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout warn"><span class="tag">Two limits</span>
+    <p><b>Series kills the neck position.</b> With the volume pulled up the neck hot leaves the
+    blade, so blade 3 is silent. Series is a middle/bridge override — the same wart a factory Jimmy
+    Page harness has.</p>
+    <p><b>The both-split position needs a conventional pair.</b> Grounding a coil junction always
+    leaves the coil next to the hot lead, so both-split resolves to neck screw + bridge slug — the
+    diagonal pair. That cancels with a conventional pair and <b>adds hum with an RWRP pair.</b>
+    Built on Setup 1's pickups you get 7 voices, 4 quiet; on a conventional pair, 7 voices, 5 quiet
+    including a proper quack.</p></div>
+  <figure id="wiring2"><div class="paper"><a href="diagrams/setup2-curated.svg">
+    <img src="diagrams/setup2-curated.svg" alt="Setup 2 Curated wiring diagram"></a></div>
+    <figcaption><a href="diagrams/setup2-curated.svg">Open full size</a></figcaption></figure>
+    </div>
+  </details>
+</section>
+
+<section id="setup3">
+  <details class="alt">
+    <summary><span class="sum-k">Setup 3</span><span class="sum-t">"Quiet" — no splits anywhere</span><span class="sum-m">3-way blade · 8 voices, all hum-free · easy build · ~$78–98</span><span class="sum-x"></span></summary>
+    <div class="det">
+
+  <div class="scroll"><table>
+    <thead><tr><th>Blade</th><th>V↓ T↓</th><th>V↑ T↓</th><th>V↓ T↑</th><th>V↑ T↑</th></tr></thead>
+    <tbody>
+      <tr><td><b>Bridge</b></td><td><span class="id">H1</span></td><td><span class="id">P1</span></td><td class="dup">dup</td><td class="dup">dup</td></tr>
+      <tr><td><b>Both</b></td><td><span class="id">H3</span></td><td>bridge-∥ + neck-series</td><td>bridge-series + neck-∥</td><td>both parallel</td></tr>
+      <tr><td><b>Neck</b></td><td><span class="id">H2</span></td><td class="dup">dup</td><td><span class="id">P2</span></td><td class="dup">dup</td></tr>
+    </tbody>
+  </table></div>
+  <p>Each push-pull switches its own pickup's coils between series and parallel — the Ibanez
+  Tri-Sound idea. Parallel is −6 dB and about an octave brighter, and still cancels hum because the
+  coils stay paired.</p>
+  <p><b>Limits.</b> No H4 — both DPDTs are spent on the pickups, so nothing is left to series-link
+  them. Nothing here barks like a real single coil.</p>
+  <figure id="wiring3"><div class="paper"><a href="diagrams/setup3-quiet.svg">
+    <img src="diagrams/setup3-quiet.svg" alt="Setup 3 Quiet wiring diagram"></a></div>
+    <figcaption><a href="diagrams/setup3-quiet.svg">Open full size</a></figcaption></figure>
+    </div>
+  </details>
+</section>
+</section>
+
 <section id="explorer">
   <h2>Reference</h2>
   <h3>Setup 1 explorer</h3>
@@ -644,7 +633,6 @@
   </div>
 </section>
 
-<!-- ================= TAXONOMY ================= -->
 <section id="taxonomy">
   <h2>Reference</h2>
   <h3>Every useful sound from two humbuckers</h3>
@@ -687,7 +675,6 @@
   </table></div>
 </section>
 
-<!-- ================= VENDORS ================= -->
 <section id="vendors">
   <h2>Reference</h2>
   <h3>How the big shops solve this</h3>
@@ -707,7 +694,6 @@
   <p class="mut">A Switchcraft 3-way toggle contributes <b>zero</b> switching poles — it is two SPST
   sections bonded to one output lug. Any "toggle + two push-pulls" scheme has a 4-pole budget, not 6.</p>
 </section>
-
 <footer>
   <p><b>Status: verified on paper, not on a bench.</b> Vendor maps come from a 24-agent research and
   adversarial-review pass; the Setup 1 pole matrix is derived work, after all four candidate designs
@@ -884,10 +870,13 @@ function revealHash(hash){
   try { el = document.querySelector(hash); } catch(e) { return; }
   if(!el) return;
   var n = el;
-  while(n && n !== document.body){
+  while(n && n !== document.body){                    // open collapsed ancestors
     if(n.tagName === 'DETAILS') n.open = true;
     n = n.parentNode;
   }
+  if(el.tagName === 'DETAILS') el.open = true;        // the target itself
+  var inner = el.querySelectorAll ? el.querySelectorAll('details') : [];
+  for(var i = 0; i < inner.length; i++) inner[i].open = true;   // ...and any inside it
   el.scrollIntoView();
 }
 document.addEventListener('click', function(e){
