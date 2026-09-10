@@ -27,8 +27,11 @@ voice for one instruction to the winder. The only consequence: the bridge's hot 
 swap, to keep the humbuckers in phase. Sign algebra in
 [docs/pole-matrix.md](docs/pole-matrix.md#lead-naming).
 
-> Everything below assumes the RWRP spec in [§6](#6-pickup-specification). With a conventional pair
-> Setup 1 still works, but positions 2 and 4 hum.
+> **Setups 1 and 3 assume the RWRP spec** in [§6](#6-pickup-specification); Setup 1 requires it —
+> with a conventional pair its positions 2 and 4 hum. **Setup 2 is the exception:** grounding a coil
+> junction always leaves the coil next to the hot lead, so its master split resolves to the
+> *diagonal* pair, which cancels only with a conventional pair. Setups 1 and 2 cannot both be built
+> from one set of pickups.
 
 ## 2. Option taxonomy
 
