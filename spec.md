@@ -137,6 +137,10 @@ deviate from that table without re-walking it.
 | Volume push-pull | both humbuckers in series → **H4** |
 | Tone push-pull | master coil split → **X1**, **X2**, both-split parallel |
 
+> **Known limit.** With the volume pulled UP the neck-only position is **silent** — the neck hot
+> leaves the blade, so series is a middle/bridge override, exactly as on a factory Jimmy Page
+> harness. Setup 1 does not have this wart.
+
 For when you want it playable this weekend.
 
 ### Setup 3 — "Quiet"
@@ -215,12 +219,17 @@ Send this to the winder verbatim.
 
 ## Repo
 
+Published at **[itaiche.github.io/guitar-wiring-options](https://itaiche.github.io/guitar-wiring-options/)**
+— everything below, plus a live circuit explorer, on one page.
+
 | File | What |
 |---|---|
+| [index.html](index.html) | The GitHub Pages site: this document plus the interactive explorer |
 | [spec.md](spec.md) | This document |
 | [docs/pole-matrix.md](docs/pole-matrix.md) | Contact-by-contact verification. Read before soldering. |
 | [bom.md](bom.md) | Parts and prices |
-| [diagrams/](diagrams/) | Bench schematics + `interactive.html` explorer |
+| [diagrams/](diagrams/) | Shop-style wiring diagrams |
+| [tools/gen_diagrams.py](tools/gen_diagrams.py) | Regenerates the diagrams |
 
 ## Provenance
 

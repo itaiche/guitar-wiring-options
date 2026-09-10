@@ -1,0 +1,860 @@
+<title>HH Wiring — Sweep</title>
+<meta name="description" content="Wiring design for a two-humbucker guitar with one volume, one tone and one selector: option taxonomy, vendor survey, three verified setups, schematics and BOM.">
+<style>
+  :root {
+    --bg:#f7f6f3; --panel:#fff; --panel-2:#f1efea; --ink:#1a1815; --ink-2:#5d574e;
+    --ink-3:#8b8378; --line:#ddd8cf; --line-2:#c8c1b5;
+    --neck:#b5741f; --neck-soft:#f5e6d0; --bridge:#1f6f8b; --bridge-soft:#d8ecf3;
+    --ok:#2f7d4f; --ok-soft:#dcefe2; --warn:#a8631a; --warn-soft:#f8e8d4;
+    --dead:#b9b2a6; --accent:#8b3a2f; --accent-soft:#f6e5e1;
+    --shadow:0 1px 2px rgba(26,24,21,.06),0 4px 14px rgba(26,24,21,.05);
+    --paper:#fdfcfa;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --bg:#16150f; --panel:#201e18; --panel-2:#2a271f; --ink:#f0ece2; --ink-2:#b5ad9c;
+    --ink-3:#837b6c; --line:#37332a; --line-2:#4a453a;
+    --neck:#e0a052; --neck-soft:#3d2f18; --bridge:#62b8d6; --bridge-soft:#14313d;
+    --ok:#63c78d; --ok-soft:#16301f; --warn:#e2a45c; --warn-soft:#382512;
+    --dead:#575145; --accent:#e08574; --accent-soft:#3a201b;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+    --paper:#fdfcfa;
+  }}
+  :root[data-theme="dark"]{
+    --bg:#16150f; --panel:#201e18; --panel-2:#2a271f; --ink:#f0ece2; --ink-2:#b5ad9c;
+    --ink-3:#837b6c; --line:#37332a; --line-2:#4a453a;
+    --neck:#e0a052; --neck-soft:#3d2f18; --bridge:#62b8d6; --bridge-soft:#14313d;
+    --ok:#63c78d; --ok-soft:#16301f; --warn:#e2a45c; --warn-soft:#382512;
+    --dead:#575145; --accent:#e08574; --accent-soft:#3a201b;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+    --paper:#fdfcfa;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:64px}
+  body{background:var(--bg);color:var(--ink);margin:0;
+    font:15.5px/1.6 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:var(--bg);
+    background:color-mix(in srgb,var(--bg) 88%,transparent);
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;gap:2px;align-items:center;overflow-x:auto;padding-top:9px;padding-bottom:9px}
+  nav a{color:var(--ink-3);text-decoration:none;font-size:13px;font-weight:600;
+    padding:6px 10px;border-radius:6px;white-space:nowrap}
+  nav a:hover{color:var(--ink);background:var(--panel-2)}
+  nav .brand{color:var(--ink);font-weight:700;margin-right:10px;padding-left:0}
+
+  header{padding:52px 0 34px}
+  h1{font-size:38px;line-height:1.08;letter-spacing:-.03em;margin:0 0 14px;font-weight:660}
+  .lede{font-size:18px;line-height:1.5;color:var(--ink-2);max-width:60ch;margin:0 0 22px}
+  .lede b{color:var(--ink);font-weight:640}
+  .rig{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+  .chip{font-size:12.5px;background:var(--panel-2);border:1px solid var(--line);
+    border-radius:20px;padding:5px 12px;color:var(--ink-2)}
+
+  section{padding:34px 0;border-top:1px solid var(--line)}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3);
+    margin:0 0 8px;font-weight:680}
+  h3{font-size:25px;line-height:1.2;letter-spacing:-.02em;margin:0 0 16px;font-weight:640}
+  h4{font-size:17px;margin:30px 0 10px;font-weight:640;letter-spacing:-.01em}
+  p{margin:0 0 14px;max-width:74ch}
+  ul,ol{max-width:74ch;padding-left:22px}
+  li{margin-bottom:7px}
+  code{background:var(--panel-2);padding:1.5px 5px;border-radius:4px;
+    font:.87em ui-monospace,SFMono-Regular,Menlo,monospace}
+  a{color:var(--accent)}
+
+  .callout{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:0 9px 9px 0;padding:15px 18px;margin:18px 0;box-shadow:var(--shadow)}
+  .callout.warn{border-left-color:var(--warn);background:var(--warn-soft)}
+  .callout.ok{border-left-color:var(--ok);background:var(--ok-soft)}
+  .callout p{margin:0}
+  .callout p+p{margin-top:9px}
+  .callout .tag{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;
+    font-weight:700;color:var(--ink-3);display:block;margin-bottom:5px}
+
+  .scroll{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+  table{border-collapse:collapse;width:100%;min-width:600px;font-size:13.5px}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);
+    font-weight:680;border-bottom:1px solid var(--line-2);white-space:nowrap}
+  tbody tr:hover{background:var(--panel-2)}
+  td b,th b{font-weight:660}
+  .mono{font:12.5px ui-monospace,SFMono-Regular,Menlo,monospace}
+  .yes{color:var(--ok);font-weight:700}
+  .no{color:var(--warn);font-weight:700}
+  .id{font:650 12px ui-monospace,Menlo,monospace;color:var(--ink)}
+
+  /* explorer */
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    box-shadow:var(--shadow);padding:20px;margin-bottom:18px}
+  .ctrls{display:flex;flex-wrap:wrap;gap:26px}
+  .ctrl-group{flex:1 1 300px;min-width:250px}
+  .ctrl-label{font-size:11.5px;text-transform:uppercase;letter-spacing:.09em;
+    color:var(--ink-3);font-weight:680;margin-bottom:9px}
+  .blade,.pull{display:flex;gap:5px;background:var(--panel-2);padding:5px;
+    border-radius:9px;border:1px solid var(--line)}
+  .blade button,.pull button{flex:1;border:1px solid transparent;background:transparent;
+    color:var(--ink-2);font:600 14px/1.35 inherit;padding:11px 4px;border-radius:6px;cursor:pointer}
+  .pull button{font-size:13.5px;padding:9px 8px}
+  .pull button span{display:block;font-weight:450;font-size:11.5px;color:var(--ink-3);margin-top:3px}
+  .blade button:hover,.pull button:hover{background:var(--panel);color:var(--ink)}
+  .blade button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+  .pull button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+  .pull button[aria-pressed="true"] span{color:var(--bg);opacity:.68}
+  .ends{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink-3);
+    margin-top:7px;padding:0 4px}
+  .readout{display:flex;flex-wrap:wrap;gap:16px;align-items:baseline;padding-bottom:15px;
+    margin-bottom:16px;border-bottom:1px solid var(--line)}
+  .vid{font:650 13px/1 ui-monospace,Menlo,monospace;color:var(--bg);background:var(--ink);
+    padding:6px 9px;border-radius:5px}
+  .vname{font-size:21px;font-weight:630;letter-spacing:-.015em}
+  .badges{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
+  .badge{font-size:12px;font-weight:620;padding:5px 10px;border-radius:20px;white-space:nowrap}
+  .badge.ok{background:var(--ok-soft);color:var(--ok)}
+  .badge.warn{background:var(--warn-soft);color:var(--warn)}
+  .badge.neutral{background:var(--panel-2);color:var(--ink-2);border:1px solid var(--line)}
+  #desc{color:var(--ink-2);margin:0 0 4px}
+  #desc strong{color:var(--ink);font-weight:640}
+  #reftone{color:var(--ink-3);font-size:13.5px;margin:10px 0 0}
+  #reftone b{color:var(--ink-2)}
+  svg.circuit{display:block;min-width:620px;width:100%;height:auto}
+  .map{display:grid;grid-template-columns:auto 1fr 1fr;gap:7px}
+  .map .hd{font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);
+    font-weight:680;padding:2px 4px 6px;align-self:end}
+  .map .rl{font:620 13px ui-monospace,Menlo,monospace;color:var(--ink-3);
+    display:flex;align-items:center;padding-right:6px}
+  .cell{text-align:left;background:var(--panel-2);border:1px solid var(--line);border-radius:8px;
+    padding:10px 11px;cursor:pointer;color:var(--ink);font:inherit}
+  .cell:hover{border-color:var(--line-2)}
+  .cell[aria-pressed="true"]{border-color:var(--accent);background:var(--panel);
+    box-shadow:inset 0 0 0 1px var(--accent)}
+  .cell .cid{font:650 11.5px ui-monospace,Menlo,monospace;color:var(--ink-3)}
+  .cell .cnm{display:block;margin-top:5px;font-size:13.5px;font-weight:580;line-height:1.3}
+  .cell .cmeta{display:block;margin-top:6px;font-size:11.5px;color:var(--ink-3)}
+  .cell .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--ok);
+    margin-right:5px;vertical-align:middle}
+  .cell.hums .dot{background:var(--warn)}
+
+  /* setup cards + schematics */
+  .setup{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    padding:22px;margin:18px 0;box-shadow:var(--shadow)}
+  .setup.rec{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent),var(--shadow)}
+  .rank{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;
+    text-transform:uppercase;background:var(--accent-soft);color:var(--accent);
+    padding:4px 10px;border-radius:20px;margin-bottom:10px}
+  .rank.alt{background:var(--panel-2);color:var(--ink-3)}
+  .setup h4{margin-top:0;font-size:21px}
+  figure{margin:20px 0 0}
+  .paper{background:var(--paper);border:1px solid var(--line-2);border-radius:9px;
+    padding:10px;overflow-x:auto}
+  .paper img{display:block;width:100%;min-width:900px;height:auto}
+  figcaption{font-size:12.5px;color:var(--ink-3);margin-top:9px}
+  figcaption a{color:var(--ink-2)}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .quote{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+  .quote ol{margin:10px 0 0}
+  footer{padding:34px 0 70px;border-top:1px solid var(--line);color:var(--ink-3);font-size:13.5px}
+  footer a{color:var(--ink-2)}
+  @media (max-width:700px){
+    h1{font-size:29px} h3{font-size:21px}
+    .grid2{grid-template-columns:1fr}
+    .map{grid-template-columns:1fr}
+    .map .hd:nth-child(2),.map .hd:nth-child(3){display:none}
+    .map .rl{padding:8px 0 0}
+    .badges{margin-left:0;width:100%}
+  }
+</style>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top">HH Wiring</a>
+  <a href="#rwrp">RWRP</a><a href="#explorer">Explorer</a><a href="#taxonomy">Sounds</a>
+  <a href="#vendors">Vendors</a><a href="#setups">Setups</a><a href="#matrix">Pole matrix</a>
+  <a href="#build">Build</a><a href="#pickups">Pickups</a><a href="#bom">BOM</a>
+</div></nav>
+
+<div class="wrap" id="top">
+<header>
+  <h1>Two humbuckers, one volume, one tone, one selector</h1>
+  <p class="lede">How many <b>genuinely useful</b> sounds can you get out of that, and what is the
+  wiring that delivers them? Answer: a 4-pole 5-way super switch, a push-pull volume that means one
+  thing everywhere, a plain tone pot, and an RWRP-specified pickup pair — <b>ten voices, eight dead
+  quiet.</b></p>
+  <div class="rig">
+    <span class="chip">Semi-hollow LP-style · mahogany + maple top · f-hole</span>
+    <span class="chip">ESP 24-fret maple neck, ebony board</span>
+    <span class="chip">Rear control cavity</span>
+    <span class="chip">Blade slot already routed</span>
+    <span class="chip">2× custom-wound PAF-class, 4-conductor</span>
+  </div>
+</header>
+
+<!-- ================= RWRP ================= -->
+<section id="rwrp">
+  <h2>The pivot</h2>
+  <h3>One decision changes everything: RWRP</h3>
+  <p>Two coils cancel hum only if they are reverse-wound <b>and</b> reverse-polarity relative to
+  each other. Inside a single humbucker that is always true — that is why a humbucker is quiet.
+  Across two <em>different</em> pickups it depends entirely on how the pair was built.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Pair type</th><th>Which coil pairs cancel</th><th>What you get</th></tr></thead>
+    <tbody>
+      <tr><td><b>Non-RWRP</b><br><span style="color:var(--ink-3)">identical pickups — the default</span></td>
+        <td>Diagonal only: neck screw + bridge slug</td>
+        <td>One quiet quack aperture (~90 mm). What PRS ships.</td></tr>
+      <tr><td><b>RWRP</b><br><span style="color:var(--ink-3)">bridge magnet reversed</span></td>
+        <td>Outer+outer <b>and</b> inner+inner</td>
+        <td><b>Two</b> quiet apertures (~107 mm and ~73 mm)</td></tr>
+    </tbody>
+  </table></div>
+  <p>Because these pickups are being wound to order, RWRP is free and strictly better: an entire
+  extra usable voice for one instruction to the winder. The only consequence is that the bridge
+  pickup's hot and ground leads swap, to keep the two humbuckers in phase when combined.</p>
+
+  <h4>The sign algebra</h4>
+  <p>Signal from a coil scales with (magnet polarity × winding direction); hum scales with winding
+  direction alone. Reversing the bridge magnet inverts its signal but <em>not</em> its hum — which
+  is exactly why the lead swap fixes phase without undoing the hum benefit.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Coil</th><th>pol</th><th>wind</th><th>signal</th><th>hum</th>
+      <th>after bridge lead-swap</th></tr></thead>
+    <tbody class="mono">
+      <tr><td>Neck screw</td><td>+1</td><td>+1</td><td>+1</td><td>+1</td><td>—</td></tr>
+      <tr><td>Neck slug</td><td>−1</td><td>−1</td><td>+1</td><td>−1</td><td>—</td></tr>
+      <tr><td>Bridge screw</td><td>−1</td><td>+1</td><td>−1</td><td>+1</td><td>signal +1, hum −1</td></tr>
+      <tr><td>Bridge slug</td><td>+1</td><td>−1</td><td>−1</td><td>−1</td><td>signal +1, hum +1</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>Outer pair — signal <code>+2</code>, hum <code>0</code> <span class="yes">✓</span></li>
+    <li>Inner pair — signal <code>+2</code>, hum <code>0</code> <span class="yes">✓</span></li>
+    <li>Each humbucker alone — internally RWRP <span class="yes">✓</span> · both combined — in phase <span class="yes">✓</span></li>
+  </ul>
+</section>
+
+<!-- ================= EXPLORER ================= -->
+<section id="explorer">
+  <h2>Live</h2>
+  <h3>Setup 1 explorer</h3>
+  <p>Move the blade and the volume knob. The circuit below is redrawn as it actually stands in that
+  state — not a highlight over a fixed picture.</p>
+
+  <div class="panel">
+    <div class="ctrls">
+      <div class="ctrl-group">
+        <div class="ctrl-label">Blade position</div>
+        <div class="blade" id="blade" role="group" aria-label="Blade position"></div>
+        <div class="ends"><span>bridge</span><span>neck</span></div>
+      </div>
+      <div class="ctrl-group">
+        <div class="ctrl-label">Volume push-pull</div>
+        <div class="pull" id="pull" role="group" aria-label="Volume push-pull"></div>
+        <div class="ends"><span>one rule, every position</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="readout">
+      <span class="vid" id="vid">H1</span>
+      <span class="vname" id="vname">Bridge humbucker</span>
+      <span class="badges">
+        <span class="badge" id="bhum">hum-cancelling</span>
+        <span class="badge neutral" id="bout">0 dB</span>
+      </span>
+    </div>
+    <p id="desc"></p>
+    <div class="scroll"><svg class="circuit" id="circuit" xmlns="http://www.w3.org/2000/svg"></svg></div>
+    <p id="reftone"></p>
+  </div>
+
+  <div class="panel">
+    <div class="ctrl-label">Switch matrix — the active column is what your blade is doing</div>
+    <div class="scroll"><table style="min-width:560px">
+      <thead><tr><th>Pole</th><th>Common goes to</th>
+        <th id="h1">1</th><th id="h2">2</th><th id="h3">3</th><th id="h4">4</th><th id="h5">5</th></tr></thead>
+      <tbody id="mtx"></tbody>
+    </table></div>
+    <p style="color:var(--ink-3);font-size:13.5px;margin-top:12px">
+      <b>BR—BW</b> and <b>NW—NR</b> are hardwired links soldered at the pickup, not switched. That
+      is what makes position 3 fit in four poles — and what rules out intra-pickup parallel at
+      positions 1 and 5.</p>
+  </div>
+
+  <div class="panel">
+    <div class="ctrl-label">All ten voices</div>
+    <div class="map" id="map"></div>
+  </div>
+</section>
+
+<!-- ================= TAXONOMY ================= -->
+<section id="taxonomy">
+  <h2>The palette</h2>
+  <h3>Every useful sound from two 4-conductor humbuckers</h3>
+  <p>Output is relative to one humbucker. Hum assumes coils matched within ~10% DCR — cancellation
+  quality scales directly with that match.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>ID</th><th>Sound</th><th>Circuit</th><th>Hum</th><th>Output</th><th>Reference</th></tr></thead>
+    <tbody>
+      <tr><td class="id">H1</td><td><b>Bridge humbucker</b></td><td>bridge coils in series</td><td class="yes">✓</td><td>0 dB (ref)</td><td>LP bridge — AC/DC, Slash</td></tr>
+      <tr><td class="id">H2</td><td><b>Neck humbucker</b></td><td>neck coils in series</td><td class="yes">✓</td><td>0 dB (+2 perceived)</td><td>LP neck — Clapton "Beano"</td></tr>
+      <tr><td class="id">H3</td><td><b>Both HB parallel</b></td><td>classic middle</td><td class="yes">✓</td><td>~0 to −1 dB</td><td>LP middle — Duane Allman</td></tr>
+      <tr><td class="id">H4</td><td><b>Both HB series</b></td><td>4 coils in series</td><td class="yes">✓</td><td>+6 dB nom, +4.5 perceived</td><td>Jimmy Page series pull</td></tr>
+      <tr><td class="id">P1</td><td>Bridge coils parallel</td><td>—</td><td class="yes">✓</td><td>−6 dB</td><td>Ibanez Tri-Sound; Lifeson Axcess</td></tr>
+      <tr><td class="id">P2</td><td>Neck coils parallel</td><td>—</td><td class="yes">✓</td><td>−6 dB</td><td>Ibanez Tri-Sound</td></tr>
+      <tr><td class="id">Q1</td><td><b>Outer coils parallel</b></td><td>neck screw + bridge screw, ~107 mm</td><td class="yes">✓ <span style="font-weight:400">RWRP</span></td><td>−6 dB</td><td>PRS Custom 24 pos 4; EBMM Axis pos 2</td></tr>
+      <tr><td class="id">Q2</td><td>Inner coils parallel</td><td>neck slug + bridge slug, ~73 mm</td><td class="yes">✓ <span style="font-weight:400">RWRP</span></td><td>−6 dB</td><td>Ibanez AZ / RG pos 4</td></tr>
+      <tr><td class="id">Q3</td><td>Diagonal parallel</td><td>neck screw + bridge slug, ~90 mm</td><td class="yes">✓ <span style="font-weight:400">non-RWRP</span></td><td>−6 dB</td><td>PRS Custom 24 factory pos 4</td></tr>
+      <tr><td class="id">S1</td><td><b>Outer coils series</b></td><td>two singles in series, wide aperture</td><td class="yes">✓ <span style="font-weight:400">RWRP</span></td><td>0 dB</td><td>Schaller HH3</td></tr>
+      <tr><td class="id">S2</td><td>Inner coils series</td><td>~73 mm, in series</td><td class="yes">✓ <span style="font-weight:400">RWRP</span></td><td>0 dB</td><td>Free-Way 3X3-04</td></tr>
+      <tr><td class="id">X1</td><td>Bridge split</td><td>one coil alone</td><td class="no">✗</td><td>−6 dB (−4 tapped)</td><td>PRS McCarty 594</td></tr>
+      <tr><td class="id">X2</td><td>Neck split</td><td>one coil alone</td><td class="no">✗</td><td>−6 dB (−4 tapped)</td><td>Gibson LP Modern</td></tr>
+      <tr><td class="id">M1</td><td>Neck HB + bridge single</td><td>full neck ∥ one bridge coil</td><td class="no">✗</td><td>−3.5 dB</td><td>PRS Custom 24 pos 2</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4>Three things worth internalising</h4>
+  <ul>
+    <li><b>Parallel (P1/P2) is the hum-free alternative to a split.</b> Same −6 dB and the same
+      brightening — inductance drops 4×, so the resonant peak climbs about an octave — but the coils
+      stay paired, so hum still cancels. Ibanez shipped this as Tri-Sound in 1978.</li>
+    <li><b>Two split coils in <em>series</em> (S1/S2) sit at full output.</b> Same turn count as a
+      humbucker, but coils 73–107 mm apart have no mutual inductance: humbucker level, single-coil
+      clarity. The least-known good sound on the list.</li>
+    <li><b>H4 is the one great Jimmy Page extra.</b> +6 dB, mid-forward, the best passive front-end
+      boost a passive guitar can produce.</li>
+  </ul>
+
+  <h4>Excluded, and why</h4>
+  <div class="scroll"><table>
+    <thead><tr><th>Excluded</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Out-of-phase humbucker pair</td><td>Thin, −4 dB, one-trick. Tiring with only five detents.</td></tr>
+      <tr><td>Two coils of one humbucker out of phase</td><td>Near-total cancellation. A fault, not a sound.</td></tr>
+      <tr><td>Series + out-of-phase</td><td>Louder version of the same problem.</td></tr>
+      <tr><td>Varitone / notch filters</td><td>Needs a rotary switch we don't have.</td></tr>
+      <tr><td>"Greeny" magnet flip</td><td>Permanent, and compromises every other position.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><p><b>Q1/Q2 and Q3 are mutually exclusive</b> — that is the RWRP fork above,
+  not a menu you get to pick from twice.</p></div>
+</section>
+
+<!-- ================= VENDORS ================= -->
+<section id="vendors">
+  <h2>Prior art</h2>
+  <h3>How the big shops solve this</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>Vendor / model</th><th>Controls</th><th>Delivers</th><th>Takeaway</th></tr></thead>
+    <tbody>
+      <tr><td><b>Gibson</b> LP Modern</td><td>2 vol, 2 tone, push-pull splits</td><td>H1–H3, X1, X2</td><td>Splits belong on push-pulls; partial taps soften them</td></tr>
+      <tr><td><b>Gibson</b> "Jimmy Page"</td><td>4 push-pulls</td><td>splits, phase, H4</td><td>Keep H4; drop phase — it's dead in two of three detents</td></tr>
+      <tr><td><b>PRS</b> Custom 24</td><td>5-way blade</td><td>H1, M1, H3, Q3, H2</td><td>The <b>position ordering</b>: humbuckers at the ends, quack in the middle</td></tr>
+      <tr><td><b>PRS</b> McCarty 594</td><td>3-way + 2 push-pull splits</td><td>H1–H3, X1, X2</td><td>Asymmetric partial taps, 1.1k neck / 2.2k bridge</td></tr>
+      <tr><td><b>Ibanez</b> Tri-Sound</td><td>3-way + per-pickup mini-toggle</td><td>H1–H3, P1, P2, X1, X2</td><td><b>Parallel instead of split</b></td></tr>
+      <tr><td><b>Ibanez</b> AZ / RG 5-way</td><td>5-way blade</td><td>H1, Q2, H3, P2, H2</td><td>Inner-coil combinations</td></tr>
+      <tr><td><b>EBMM</b> Axis</td><td>5-way</td><td>H1, Q1, H3, Q2, H2</td><td>Both quack apertures on one blade</td></tr>
+      <tr><td><b>Yamaha</b> Revstar</td><td>3-way + "Dry Switch"</td><td>passive low-cut</td><td>Tone shaping is an axis orthogonal to selection — but see trap 3</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4>Three traps this survey exposed</h4>
+  <div class="callout warn"><span class="tag">Trap 1</span>
+    <p><b>A Switchcraft 3-way toggle contributes zero switching poles.</b> It is two SPST sections
+    bonded to one common output lug: it gates hots, it cannot route a coil. Any "toggle + two
+    push-pulls" scheme therefore has a 4-pole budget, not 6.</p></div>
+  <div class="callout warn"><span class="tag">Trap 2</span>
+    <p><b>A standard 2-pole 5-way cannot express an HH map.</b> Both poles are consumed selecting
+    which pickup reaches the output, so positions 1 and 2 end up identical, and so do 4 and 5. This
+    is exactly why PRS uses a proprietary blade and Fender the 4-pole super switch.</p></div>
+  <div class="callout warn"><span class="tag">Trap 3</span>
+    <p><b>The widely-copied Revstar "Dry Switch" values are wrong.</b> 330 kΩ ∥ 3300 pF corners at
+    <b>146 Hz</b>, not the ~3 kHz the write-ups claim — <code>f = 1/2πRC</code>. For a low-mid cut
+    use roughly 470 kΩ ∥ 680 pF placed <em>upstream</em> of the volume pot, and measure it rather
+    than trusting the article.</p></div>
+</section>
+
+<!-- ================= SETUPS ================= -->
+<section id="setups">
+  <h2>The builds</h2>
+  <h3>Three setups, three philosophies</h3>
+  <p>All three assume the <a href="#pickups">RWRP pickup spec</a>. Click any schematic to open it
+  full size.</p>
+
+  <div class="setup rec">
+    <span class="rank">Recommended</span>
+    <h4>Setup 1 — "Sweep"</h4>
+    <p>4P5T super switch + push-pull volume + plain tone. Ten voices arranged as a bridge→neck arc,
+    so the blade behaves the way your hands already expect.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Blade</th><th>Volume DOWN — series</th><th>Volume UP — parallel</th></tr></thead>
+      <tbody>
+        <tr><td><b>1</b> bridge</td><td><span class="id">H1</span> bridge humbucker</td><td><span class="id">X1</span> bridge slug split <span class="no">⚠ hums</span></td></tr>
+        <tr><td><b>2</b></td><td><span class="id">S1</span> outer coils series</td><td><span class="id">Q1</span> outer coils parallel</td></tr>
+        <tr><td><b>3</b></td><td><span class="id">H4</span> both HB series, +6 dB</td><td><span class="id">H3</span> both HB parallel</td></tr>
+        <tr><td><b>4</b></td><td><span class="id">S2</span> inner coils series</td><td><span class="id">Q2</span> inner coils parallel</td></tr>
+        <tr><td><b>5</b> neck</td><td><span class="id">H2</span> neck humbucker</td><td><span class="id">X2</span> neck screw split <span class="no">⚠ hums</span></td></tr>
+      </tbody>
+    </table></div>
+    <p>The push-pull means exactly one thing in every detent: <b>down adds series, up goes
+    parallel.</b> No per-position exceptions to memorise — which is where most multi-push-pull
+    harnesses fail. Read the columns and you get two coherent guitars: down is the loud one, up is
+    the bright one, and levels within each row are close enough to switch mid-song. The tone
+    push-pull is unused; both poles are spare.</p>
+    <p><b>Limits.</b> No partial taps — the only insertion point is shared with six other states.
+    Positions 1-up and 5-up are true splits and hum. No M1.</p>
+    <figure><div class="paper"><a href="diagrams/setup1-sweep.svg">
+      <img src="diagrams/setup1-sweep.svg" alt="Setup 1 Sweep wiring diagram"></a></div>
+      <figcaption>Setup 1 — <a href="diagrams/setup1-sweep.svg">open full size</a>. Seymour Duncan
+      colour code. Crossing wires are not connected unless a solid junction dot is shown.</figcaption>
+    </figure>
+  </div>
+
+  <div class="setup">
+    <span class="rank alt">Simplest good option</span>
+    <h4>Setup 2 — "Curated"</h4>
+    <p>3-way blade + both pots push-pull. About 7 distinct voices, two of which hum. Nothing subtle
+    can go wrong.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Control</th><th>Function</th></tr></thead>
+      <tbody>
+        <tr><td>3-way blade</td><td>bridge / both / neck → <span class="id">H1 H3 H2</span></td></tr>
+        <tr><td>Volume push-pull</td><td>both humbuckers in series → <span class="id">H4</span></td></tr>
+        <tr><td>Tone push-pull</td><td>master coil split → <span class="id">X1 X2</span> + both-split parallel</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout warn"><span class="tag">Known limit</span>
+      <p>With the volume pulled <b>up</b>, the neck-only position is <b>silent</b> — the neck hot
+      leaves the blade, so series becomes a middle/bridge override. Exactly how a factory Jimmy Page
+      harness behaves. Setup 1 does not have this wart.</p></div>
+    <figure><div class="paper"><a href="diagrams/setup2-curated.svg">
+      <img src="diagrams/setup2-curated.svg" alt="Setup 2 Curated wiring diagram"></a></div>
+      <figcaption>Setup 2 — <a href="diagrams/setup2-curated.svg">open full size</a>.</figcaption>
+    </figure>
+  </div>
+
+  <div class="setup">
+    <span class="rank alt">Hum-free absolutist</span>
+    <h4>Setup 3 — "Quiet"</h4>
+    <p>3-way blade + one push-pull per pickup. 12 states, <b>8 distinct, every one
+    hum-cancelling.</b> No true split anywhere — Ibanez Tri-Sound applied to both pickups.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Blade</th><th>V↓ T↓</th><th>V↑ T↓</th><th>V↓ T↑</th><th>V↑ T↑</th></tr></thead>
+      <tbody>
+        <tr><td><b>Bridge</b></td><td><span class="id">H1</span></td><td><span class="id">P1</span></td><td style="color:var(--ink-3)">dup</td><td style="color:var(--ink-3)">dup</td></tr>
+        <tr><td><b>Both</b></td><td><span class="id">H3</span></td><td>bridge-∥ + neck-series</td><td>bridge-series + neck-∥</td><td>both parallel</td></tr>
+        <tr><td><b>Neck</b></td><td><span class="id">H2</span></td><td style="color:var(--ink-3)">dup</td><td><span class="id">P2</span></td><td style="color:var(--ink-3)">dup</td></tr>
+      </tbody>
+    </table></div>
+    <p>Loses H4 — both DPDTs are spent on the pickups, so nothing is left to series-link them.
+    Gains absolute silence. Pick this if you play high-gain or record in a room with bad mains.</p>
+    <figure><div class="paper"><a href="diagrams/setup3-quiet.svg">
+      <img src="diagrams/setup3-quiet.svg" alt="Setup 3 Quiet wiring diagram"></a></div>
+      <figcaption>Setup 3 — <a href="diagrams/setup3-quiet.svg">open full size</a>.</figcaption>
+    </figure>
+  </div>
+
+  <div class="callout"><p><b>Choosing.</b> Widest range and you'll build carefully → <b>Setup 1</b>.
+  Working by Sunday → <b>Setup 2</b>. Noisy room → <b>Setup 3</b>.</p></div>
+</section>
+
+<!-- ================= MATRIX ================= -->
+<section id="matrix">
+  <h2>Verification</h2>
+  <h3>The pole matrix</h3>
+  <p>This is the artefact that gets written <em>before</em> any schematic, because the failure modes
+  it catches are invisible on a drawing.</p>
+  <ul>
+    <li><b>A switch lug is not a switching node.</b> Everything soldered to one lug is permanently
+      connected. Wiring "bridge cold + ground" to one contact gives a <em>permanent</em> ground and
+      silently deletes every series position.</li>
+    <li><b>The binding constraint on a 4P5T is contacts-per-detent (4)</b>, not poles×throws (20).</li>
+    <li><b>Two nets sharing a pole can short during the wipe.</b> If the OUT bus and ground ever land
+      on adjacent contacts of one pole, the guitar drops out as you move the blade.</li>
+  </ul>
+
+  <h4>The structural problem — and the fix</h4>
+  <p>The natural formulation is that the selector presents four nodes per detent and one DPDT picks
+  series or parallel. Four nodes, four poles: it looks like it fits.</p>
+  <p><b>It doesn't.</b> Position 3 combines two whole humbuckers, and a whole humbucker only exists
+  if its coil junction is linked — so it needs six nodes: <code>BG</code>, <code>BBk</code>,
+  <code>NBk</code>, <code>NG</code>, plus the links <code>BR—BW</code> and <code>NW—NR</code>. This
+  is why no production HH guitar offers intra-pickup parallel <em>and</em> both-humbucker positions
+  on one blade.</p>
+  <div class="callout ok"><span class="tag">Fix</span>
+    <p>Hardwire both links, and get the second voice at positions 1 and 5 from a <b>shorted</b> coil
+    rather than a parallel one. Those detents have a pole spare (only one pickup is live), so pole 3
+    sits unconnected and the DPDT's parallel throw grounds the junction. The cost — positions 1-up
+    and 5-up are real splits and hum — is stated rather than hidden.</p></div>
+
+  <h4>The matrix</h4>
+  <div class="scroll"><table>
+    <thead><tr><th>Pole</th><th>Common goes to</th><th>Pos 1</th><th>Pos 2</th><th>Pos 3</th><th>Pos 4</th><th>Pos 5</th></tr></thead>
+    <tbody class="mono">
+      <tr><td><b>1</b></td><td>OUT bus → volume lug 3</td><td>BG</td><td>BW</td><td>BG</td><td>BG</td><td>NBk</td></tr>
+      <tr><td><b>2</b></td><td>DPDT pole 1 common</td><td>BR</td><td>BBk</td><td>BBk</td><td>BR</td><td>NR</td></tr>
+      <tr><td><b>3</b></td><td>DPDT pole 2 common</td><td>—</td><td>NBk</td><td>NBk</td><td>NR</td><td>—</td></tr>
+      <tr><td><b>4</b></td><td>GND bus</td><td>BBk</td><td>NW</td><td>NG</td><td>NG</td><td>NG</td></tr>
+    </tbody>
+  </table></div>
+  <div class="scroll"><table style="min-width:480px">
+    <thead><tr><th>Volume push-pull</th><th>Pole 1 (common = selector pole 2)</th><th>Pole 2 (common = selector pole 3)</th></tr></thead>
+    <tbody>
+      <tr><td><b>DOWN</b> = series</td><td>→ selector pole 3 common</td><td>→ open</td></tr>
+      <tr><td><b>UP</b> = parallel</td><td>→ GND</td><td>→ OUT bus</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4>State walk</h4>
+  <div class="scroll"><table>
+    <thead><tr><th>#</th><th>State</th><th>Path</th><th>Voice</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td class="mono">P1 ↓</td><td class="mono">BG→OUT, BBk→GND, BR/BW floating</td><td><b>H1</b> bridge humbucker</td></tr>
+      <tr><td>2</td><td class="mono">P1 ↑</td><td class="mono">BR/BW→GND, BBk→GND ⇒ screw shorted</td><td><b>X1</b> bridge slug split <span class="no">(hums)</span></td></tr>
+      <tr><td>3</td><td class="mono">P2 ↓</td><td class="mono">OUT←BW→screw→BBk→NBk→screw→NW→GND</td><td><b>S1</b> outer coils series</td></tr>
+      <tr><td>4</td><td class="mono">P2 ↑</td><td class="mono">BW,NBk→OUT; BBk,NW→GND</td><td><b>Q1</b> outer coils parallel</td></tr>
+      <tr><td>5</td><td class="mono">P3 ↓</td><td class="mono">BG→slug→BR—BW→screw→BBk→NBk→screw→NW—NR→slug→NG→GND</td><td><b>H4</b> both HB series</td></tr>
+      <tr><td>6</td><td class="mono">P3 ↑</td><td class="mono">BG,NBk→OUT; BBk,NG→GND</td><td><b>H3</b> both HB parallel</td></tr>
+      <tr><td>7</td><td class="mono">P4 ↓</td><td class="mono">OUT←BG→slug→BR→NR→slug→NG→GND</td><td><b>S2</b> inner coils series</td></tr>
+      <tr><td>8</td><td class="mono">P4 ↑</td><td class="mono">BG,NR→OUT; BR,NG→GND</td><td><b>Q2</b> inner coils parallel</td></tr>
+      <tr><td>9</td><td class="mono">P5 ↓</td><td class="mono">NBk→OUT, NG→GND, NR/NW floating</td><td><b>H2</b> neck humbucker</td></tr>
+      <tr><td>10</td><td class="mono">P5 ↑</td><td class="mono">NR/NW→GND, NG→GND ⇒ slug shorted</td><td><b>X2</b> neck screw split <span class="no">(hums)</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h4>Checks</h4>
+  <ul>
+    <li><b>Contacts per detent:</b> 4 everywhere; positions 1 and 5 use only 3. Within budget.</li>
+    <li><b>No dead states</b> — all ten resolve to exactly one circuit.</li>
+    <li><b>No hot-to-ground short.</b> No pole carries both the OUT bus and ground, so a wiping
+      blade cannot bridge them. Worst case is <code>BG</code>↔<code>BW</code>, which momentarily
+      shorts the bridge slug coil — silent.</li>
+    <li><b>Volume and tone in circuit in all ten states.</b></li>
+    <li><b>Dangling coils are left open, not shorted.</b> Deliberate: a shorted coil on a shared
+      magnet structure damps the live one through eddy-current loading and audibly dulls it; an open
+      one only adds a little stray capacitance.</li>
+    <li><b>Shared nets check out.</b> <code>BR/BW</code> appears on P1c2, P2c1 and P2c4;
+      <code>NW/NR</code> on P2c5, P3c4 and P4c2. Each was walked in all ten states — no unintended
+      path.</li>
+    <li><b>Split choice.</b> Pos 1-up gives the bridge <b>slug</b> (inner) coil, 17 mm further from
+      the bridge and the warmer of the two. Pos 5-up gives the neck <b>screw</b> (outer) coil, the
+      woollier one — reaching the brighter slug would collide with pole 1's assignment in that
+      detent. Accepted.</li>
+    <li><b>No partial taps.</b> The only insertion point is the DPDT's UP throw to ground, which is
+      also the cold return in positions 2–4 — a resistor there would sit in the signal path in six
+      other states.</li>
+  </ul>
+</section>
+
+<!-- ================= BUILD ================= -->
+<section id="build">
+  <h2>Bench</h2>
+  <h3>Shared build details</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>Item</th><th>Value</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Volume pot</td><td>500 kΩ audio, CTS 450S push-pull</td><td>250k audibly dulls a humbucker</td></tr>
+      <tr><td>Tone pot</td><td>500 kΩ audio</td><td>Setup 1 plain; Setups 2–3 push-pull</td></tr>
+      <tr><td>Shaft</td><td>Long bushing (¾" / 19 mm)</td><td>Mandatory through a carved cap</td></tr>
+      <tr><td>Tone cap</td><td>0.022 µF film, 200 V+</td><td>Gibson value for 500k + humbucker</td></tr>
+      <tr><td>Treble bleed</td><td>180 pF alone (PRS), or 680 pF + 150 kΩ series</td><td>Don't stack a bleed on '50s wiring</td></tr>
+      <tr><td>Topology</td><td>Modern, not '50s</td><td>'50s + bleed over-brightens</td></tr>
+      <tr><td>Grounding</td><td>Single star point at the volume pot</td><td>Long runs in a semi-hollow; a loop hums more than any split</td></tr>
+      <tr><td>Shielding</td><td>Copper foil, bonded at the star point only</td><td>Coil junctions are live signal nodes in several states</td></tr>
+      <tr><td>Hookup</td><td>Single-core shielded for pickup runs</td><td>Same reason</td></tr>
+      <tr><td>Jack</td><td>Switchcraft #11 mono</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout warn"><p><b>Partial taps</b> (1.1 kΩ neck / 2.2 kΩ bridge) apply to
+  <b>Setup 2 only</b>, and must be <em>switched in</em>. Permanently bridging a coil de-hum-cancels
+  the full humbucker positions — a common and well-hidden mistake.</p>
+  <p><b>Semi-hollow note.</b> The f-hole makes this body more feedback-prone at high gain than a
+  solidbody. The fix is the wax-potting spec, not the wiring.</p></div>
+
+  <h4>Verification before you close the guitar</h4>
+  <ol>
+    <li><b>Re-walk the pole matrix on paper.</b> Every fatal flaw found while designing this was a
+      contact-level error invisible on a schematic.</li>
+    <li><b>Meter the switch.</b> Rock the blade slowly with an ohmmeter across the OUT bus and
+      ground, in both push-pull states, confirming it never shorts mid-wipe.</li>
+    <li><b>Breadboard outside the guitar</b> with clip leads and audition all ten states first.
+      Re-soldering a 24-lug switch twice is not fun.</li>
+    <li><b>Measure any filter network</b> you add rather than trusting published values — see
+      trap 3.</li>
+  </ol>
+</section>
+
+<!-- ================= PICKUPS ================= -->
+<section id="pickups">
+  <h2>Order</h2>
+  <h3>Pickup specification for the winder</h3>
+  <p>Send this verbatim.</p>
+  <div class="quote">
+    <p>Two 4-conductor humbuckers with a <b>separate bare shield</b> (not tied to a coil lead
+    internally), PAF class, 7.5–8.5 kΩ.</p>
+    <ol>
+      <li><b>Matched pair</b> — per-coil DCR within 10% across the two pickups. Cancellation in the
+        combined positions scales with this; it is the usual reason a "hum-cancelling" position
+        still hums.</li>
+      <li><b>RWRP pair</b> — bridge magnet reversed relative to neck, so bridge screw and neck screw
+        are opposite polarity.</li>
+      <li><b>Seymour Duncan colour code</b> — Black = north start, White = north finish, Red = south
+        finish, Green = south start, bare = shield.</li>
+      <li><b>Document per pickup</b> — which lead pair is the screw coil and which the slug, each
+        coil's magnet orientation, each coil's measured DCR.</li>
+      <li>Mount <b>screws-out</b>: poles toward the nut on the neck, toward the bridge on the
+        bridge.</li>
+    </ol>
+  </div>
+  <h4>Go / no-go, before the cavity closes</h4>
+  <ol>
+    <li>Hold the two pickups face to face — an RWRP pair <b>attracts</b>. If they repel, the pair is
+      conventional and positions 2 and 4 will hum. Stop and call the winder.</li>
+    <li>Meter each coil individually; confirm all four readings within 10%.</li>
+    <li>Confirm the bare shield is isolated from all four conductors.</li>
+  </ol>
+</section>
+
+<!-- ================= BOM ================= -->
+<section id="bom">
+  <h2>Parts</h2>
+  <h3>Bill of materials</h3>
+  <p>Indicative USD, before shipping.</p>
+
+  <h4>Setup 1 — "Sweep" · harness ≈ $90–120</h4>
+  <div class="scroll"><table>
+    <thead><tr><th>#</th><th>Part</th><th>Spec</th><th>Part number</th><th>~Price</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Pickup selector</td><td>4-pole 5-way "Super Switch", 24 lugs</td><td class="mono">Fender 0992251000 · Allparts EP-0078-000 · StewMac I-3200</td><td>$21–35</td></tr>
+      <tr><td></td><td><em>substitute</em></td><td>4P5T, slimmer PCB body</td><td class="mono">Schaller Megaswitch M, art. 15310006</td><td>~$22</td></tr>
+      <tr><td>1</td><td>Volume pot</td><td>CTS 450S DPDT push-pull, 500 kΩ audio, ¾" bushing</td><td class="mono">StewMac #0229 (450S 3912)</td><td>~$13</td></tr>
+      <tr><td>1</td><td>Tone pot</td><td>CTS 500 kΩ audio, plain, long bushing</td><td class="mono">CTS 450S 3912 (no switch)</td><td>~$8</td></tr>
+      <tr><td>1</td><td>Tone capacitor</td><td>0.022 µF film, 200 V+</td><td class="mono">Orange Drop 715P · Mallory 150</td><td>$2–5</td></tr>
+      <tr><td>1</td><td>Treble bleed</td><td>180 pF silver mica (PRS value)</td><td>—</td><td>~$1</td></tr>
+      <tr><td>1</td><td>Output jack</td><td>Mono ¼", long-frame</td><td class="mono">Switchcraft #11</td><td>~$5</td></tr>
+      <tr><td>2</td><td>Knobs</td><td>Split-shaft for the push-pull</td><td>—</td><td>$10–30</td></tr>
+      <tr><td>—</td><td>Hookup wire</td><td>Single-core shielded</td><td class="mono">Gavitt · Mogami</td><td>~$10</td></tr>
+      <tr><td>—</td><td>Cavity shielding</td><td>Adhesive conductive copper foil</td><td>—</td><td>~$12</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout warn"><p>The super switch is a <b>two-wafer</b> part. Confirm ≥34 mm (ideally
+  36.5 mm) of clearance under the blade slot before ordering. The rear cavity makes this likely, but
+  measure it.</p></div>
+
+  <h4>Setup 2 — "Curated" ≈ $80–100</h4>
+  <div class="scroll"><table>
+    <thead><tr><th>#</th><th>Part</th><th>Spec</th><th>~Price</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Pickup selector</td><td>3-way blade, 2-pole — Oak Grigsby / CRL</td><td>~$12</td></tr>
+      <tr><td>2</td><td>Pots</td><td>CTS 450S DPDT push-pull, 500 kΩ audio, long bushing</td><td>~$26</td></tr>
+      <tr><td>1</td><td>Tone capacitor</td><td>0.022 µF film</td><td>$2–5</td></tr>
+      <tr><td>1</td><td>Partial tap, neck</td><td>1.1 kΩ ¼ W metal film (PRS value)</td><td>&lt;$1</td></tr>
+      <tr><td>1</td><td>Partial tap, bridge</td><td>2.2 kΩ ¼ W metal film (PRS value)</td><td>&lt;$1</td></tr>
+      <tr><td>1</td><td>Treble bleed + jack + wire</td><td>as above</td><td>~$36</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4>Setup 3 — "Quiet" ≈ $78–98</h4>
+  <p>Identical to Setup 2, minus the two partial-tap resistors — no splits exist in this circuit.</p>
+
+  <h4>Pickups — all setups</h4>
+  <div class="scroll"><table>
+    <thead><tr><th>#</th><th>Item</th><th>Spec</th><th>~Price</th></tr></thead>
+    <tbody><tr><td>2</td><td>Custom-wound humbuckers</td>
+      <td>PAF class, 7.5–8.5 kΩ, 4-conductor + <b>separate</b> bare shield, <b>RWRP pair</b>,
+      per-coil DCR matched within 10%</td><td>$200–500/pair</td></tr></tbody>
+  </table></div>
+
+  <h4>Tools</h4>
+  <ul>
+    <li>Soldering iron, 40 W+ with a chisel tip — a pencil tip will not heat a pot casing</li>
+    <li>Digital multimeter — continuity and resistance, mandatory for the bench tests</li>
+    <li>Pole/magnet polarity tester, or a compass, for the RWRP go/no-go check</li>
+    <li>Clip leads, for breadboarding the harness before installing it</li>
+    <li>Solder sucker or wick — you will use it</li>
+  </ul>
+
+  <h4>Not needed</h4>
+  <ul>
+    <li><b>Partial-tap resistors for Setup 1</b> — no valid insertion point.</li>
+    <li><b>A standard 2-pole 5-way blade</b> — it cannot express an HH map.</li>
+    <li><b>A "Dry Switch" network at the published values</b> — 330 kΩ ∥ 3300 pF corners at 146 Hz,
+      not 3 kHz.</li>
+  </ul>
+</section>
+
+<footer>
+  <p><b>Provenance.</b> The vendor survey and coil theory came from a 24-agent research → design →
+  adversarial-review pass: 7 researchers, 4 independent candidate designs, and 12 reviewers
+  attacking each design on electrical validity, hum/phase and musical usefulness. The Setup 1 pole
+  matrix is my own, derived after all four candidate designs failed their electrical review.</p>
+  <p><b>Status: verified on paper, not yet on a bench.</b> The vendor position maps carry citations
+  in the underlying research, but not every primary source was opened — treat the vendor section as
+  well-sourced background and everything from the setups onward as the engineering.</p>
+  <p>Source: <a href="https://github.com/itaiche/guitar-wiring-options">github.com/itaiche/guitar-wiring-options</a>
+  · <a href="spec.md">spec.md</a> · <a href="docs/pole-matrix.md">pole-matrix.md</a>
+  · <a href="bom.md">bom.md</a> · diagrams regenerate with
+  <code>python3 tools/gen_diagrams.py</code></p>
+</footer>
+</div>
+
+<script>
+const C = {
+  bslug:  {pu:'bridge', name:'Bridge slug',  leads:'BG → BR'},
+  bscrew: {pu:'bridge', name:'Bridge screw', leads:'BW → BBk'},
+  nscrew: {pu:'neck',   name:'Neck screw',   leads:'NBk → NW'},
+  nslug:  {pu:'neck',   name:'Neck slug',    leads:'NR → NG'},
+};
+const STATES = {
+  '1d':{id:'H1',name:'Bridge humbucker',branches:[['bslug','bscrew']],hum:1,out:'0 dB',ref:'Les Paul bridge — AC/DC, Slash',
+    desc:'The reference sound of the instrument. Both bridge coils in series through the hardwired <strong>BR—BW</strong> link.'},
+  '1u':{id:'X1',name:'Bridge slug split',branches:[['bslug']],short:['bscrew'],hum:0,out:'−6 dB',ref:'PRS McCarty 594 bridge split',
+    desc:'The DPDT grounds the coil junction, shorting the screw coil. What is left is the <strong>slug</strong> coil — 17 mm further from the bridge and the warmer of the two, which is why this split avoids the ice-pick. A true single coil, so it <strong>hums</strong>.'},
+  '2d':{id:'S1',name:'Outer coils in series',branches:[['bscrew','nscrew']],hum:1,out:'0 dB',ref:'Schaller HH3 — "a Tele at humbucker output"',
+    desc:'The two outermost coils, ~107 mm apart, chained in series. Same turn count as a humbucker so the level holds, but coils that far apart have no mutual inductance — humbucker output with single-coil clarity. The least-known good sound on the list.'},
+  '2u':{id:'Q1',name:'Outer coils parallel',branches:[['bscrew'],['nscrew']],hum:1,out:'−6 dB',ref:'PRS Custom 24 pos 4; EBMM Axis pos 2',
+    desc:'The widest quack available on the guitar. Scooped and glassy, and hum-free because the RWRP spec makes these two coils opposite polarity.'},
+  '3d':{id:'H4',name:'Both humbuckers in series',branches:[['bslug','bscrew','nscrew','nslug']],hum:1,out:'+6 dB',ref:'The one Jimmy Page position worth keeping',
+    desc:'All four coils in one chain. <strong>+6 dB nominal</strong>, mid-forward, high source impedance — the best passive front-end boost a guitar can offer, and a superb drive-pedal feeder.'},
+  '3u':{id:'H3',name:'Both humbuckers parallel',branches:[['bslug','bscrew'],['nscrew','nslug']],hum:1,out:'−1 dB',ref:'Les Paul middle — Duane Allman',
+    desc:'The classic in-between. Brighter and more open than either pickup alone: the parallel pair halves the source inductance and the inter-pickup comb notch scoops the low mids.'},
+  '4d':{id:'S2',name:'Inner coils in series',branches:[['bslug','nslug']],hum:1,out:'0 dB',ref:'Free-Way 3X3-04 inner-coil series',
+    desc:'Same trick as position 2 with a tighter ~73 mm aperture: less scoop, more midrange. Reads as a hot P-90. Full output.'},
+  '4u':{id:'Q2',name:'Inner coils parallel',branches:[['bslug'],['nslug']],hum:1,out:'−6 dB',ref:'Ibanez AZ / RG position 4',
+    desc:'The narrower quack — fatter and more midrange-forward than position 2, and equally quiet.'},
+  '5d':{id:'H2',name:'Neck humbucker',branches:[['nscrew','nslug']],hum:1,out:'0 dB',ref:'Les Paul neck — Clapton "Beano"',
+    desc:'Warm, round, vocal. Reads 2–3 dB louder than the bridge in practice because string excursion is far greater up at the 24th fret.'},
+  '5u':{id:'X2',name:'Neck screw split',branches:[['nscrew']],short:['nslug'],hum:0,out:'−6 dB',ref:'Gibson Les Paul Modern neck tap',
+    desc:'Junction grounded, slug coil shorted, <strong>screw</strong> (nut-side) coil left standing. The woollier of the two neck coils — getting the brighter slug instead would collide with pole 1 in this detent. A true single coil, so it <strong>hums</strong>.'},
+};
+const MATRIX = [
+  ['Pole 1','OUT bus → volume lug 3',['BG','BW','BG','BG','NBk']],
+  ['Pole 2','Volume-DPDT pole 1 common',['BR','BBk','BBk','BR','NR']],
+  ['Pole 3','Volume-DPDT pole 2 common',['—','NBk','NBk','NR','—']],
+  ['Pole 4','GND bus',['BBk','NW','NG','NG','NG']],
+];
+let pos=1, pull='d';
+const key=()=>pos+pull;
+const NS='http://www.w3.org/2000/svg';
+function el(t,a,txt){const n=document.createElementNS(NS,t);for(const k in a)n.setAttribute(k,a[k]);
+  if(txt!=null)n.textContent=txt;return n}
+
+function draw(){
+  const st=STATES[key()], svg=document.getElementById('circuit');
+  svg.textContent='';
+  const brs=st.branches, shorts=st.short||[];
+  const W=700,L=78,R=W-78,ROW=78,TOP=46;
+  const H=TOP+brs.length*ROW+(shorts.length?74:0)+26;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.setAttribute('role','img');
+  svg.setAttribute('aria-label',st.name+' circuit');
+  const yOf=i=>TOP+i*ROW+ROW/2-12, yT=yOf(0), yB=yOf(brs.length-1);
+  svg.appendChild(el('line',{x1:L,y1:yT,x2:L,y2:yB,stroke:'var(--line-2)','stroke-width':2.5,'stroke-linecap':'round'}));
+  svg.appendChild(el('line',{x1:R,y1:yT,x2:R,y2:yB,stroke:'var(--line-2)','stroke-width':2.5,'stroke-linecap':'round'}));
+  svg.appendChild(el('text',{x:L,y:TOP-16,'text-anchor':'middle',fill:'var(--ink-3)','font-size':11.5,'font-weight':650,'letter-spacing':'.08em'},'OUT'));
+  svg.appendChild(el('text',{x:R,y:TOP-16,'text-anchor':'middle',fill:'var(--ink-3)','font-size':11.5,'font-weight':650,'letter-spacing':'.08em'},'GND'));
+  brs.forEach((chain,bi)=>{
+    const y=yOf(bi), span=R-L;
+    const bw=Math.min(132,(span-26*(chain.length+1))/chain.length);
+    const gap=(span-bw*chain.length)/(chain.length+1);
+    let x=L+gap, prev=L;
+    chain.forEach(cid=>{
+      const c=C[cid], col=c.pu==='neck'?'var(--neck)':'var(--bridge)';
+      const soft=c.pu==='neck'?'var(--neck-soft)':'var(--bridge-soft)';
+      svg.appendChild(el('line',{x1:prev,y1:y,x2:x,y2:y,stroke:col,'stroke-width':2.5,'stroke-linecap':'round'}));
+      svg.appendChild(el('rect',{x,y:y-25,width:bw,height:50,rx:8,fill:soft,stroke:col,'stroke-width':2}));
+      svg.appendChild(el('text',{x:x+bw/2,y:y-4,'text-anchor':'middle',fill:'var(--ink)','font-size':13,'font-weight':620},c.name));
+      svg.appendChild(el('text',{x:x+bw/2,y:y+13,'text-anchor':'middle',fill:'var(--ink-3)','font-size':11,'font-family':'ui-monospace, Menlo, monospace'},c.leads));
+      prev=x+bw; x=prev+gap;
+    });
+    svg.appendChild(el('line',{x1:prev,y1:y,x2:R,y2:y,
+      stroke:C[chain[chain.length-1]].pu==='neck'?'var(--neck)':'var(--bridge)','stroke-width':2.5,'stroke-linecap':'round'}));
+  });
+  if(shorts.length){
+    const y=TOP+brs.length*ROW+26;
+    shorts.forEach((cid,i)=>{
+      const c=C[cid], bw=150, x=L+20+i*(bw+30);
+      svg.appendChild(el('rect',{x,y:y-21,width:bw,height:42,rx:8,fill:'none',stroke:'var(--dead)','stroke-width':2,'stroke-dasharray':'5 4'}));
+      svg.appendChild(el('text',{x:x+bw/2,y:y-2,'text-anchor':'middle',fill:'var(--ink-3)','font-size':12.5,'font-weight':600},c.name));
+      svg.appendChild(el('text',{x:x+bw/2,y:y+13,'text-anchor':'middle',fill:'var(--ink-3)','font-size':11},'shorted to ground'));
+      svg.appendChild(el('line',{x1:x+bw+12,y1:y-9,x2:x+bw+12,y2:y+9,stroke:'var(--dead)','stroke-width':2.5,'stroke-linecap':'round'}));
+    });
+  }
+}
+function render(){
+  const st=STATES[key()];
+  document.getElementById('vid').textContent=st.id;
+  document.getElementById('vname').textContent=st.name;
+  document.getElementById('desc').innerHTML=st.desc;
+  document.getElementById('reftone').innerHTML='<b>Reference tone</b> · '+st.ref;
+  const bh=document.getElementById('bhum');
+  bh.textContent=st.hum?'hum-cancelling':'hums — true single coil';
+  bh.className='badge '+(st.hum?'ok':'warn');
+  document.getElementById('bout').textContent=st.out+' vs one humbucker';
+  document.querySelectorAll('#blade button').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.p===pos)));
+  document.querySelectorAll('#pull button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.k===pull)));
+  document.querySelectorAll('.cell').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.s===key())));
+  for(let i=1;i<=5;i++)document.getElementById('h'+i).style.background=(i===pos)?'var(--panel-2)':'';
+  document.querySelectorAll('#mtx tr').forEach(tr=>{
+    [...tr.querySelectorAll('td')].forEach((td,i)=>{
+      const on=(i===pos-1);
+      td.style.background=on?'var(--panel-2)':'';
+      td.style.color=on?'var(--ink)':'';
+      td.style.fontWeight=on?'650':'';
+    });
+  });
+  draw();
+}
+const blade=document.getElementById('blade');
+for(let i=1;i<=5;i++){
+  const b=document.createElement('button');
+  b.type='button'; b.dataset.p=i; b.textContent=i;
+  b.setAttribute('aria-label','Blade position '+i);
+  b.onclick=()=>{pos=i;render()};
+  blade.appendChild(b);
+}
+const pullEl=document.getElementById('pull');
+[['d','Down','series'],['u','Up','parallel']].forEach(([k,t,s])=>{
+  const b=document.createElement('button');
+  b.type='button'; b.dataset.k=k; b.innerHTML=t+'<span>'+s+'</span>';
+  b.onclick=()=>{pull=k;render()};
+  pullEl.appendChild(b);
+});
+const mtx=document.getElementById('mtx');
+MATRIX.forEach(([pole,role,cells])=>{
+  const tr=document.createElement('tr');
+  const th=document.createElement('th'); th.textContent=pole; tr.appendChild(th);
+  const td0=document.createElement('td');
+  td0.textContent=role; td0.style.color='var(--ink-3)'; tr.appendChild(td0);
+  cells.forEach(v=>{
+    const td=document.createElement('td');
+    td.textContent=v==='—'?'n/c':v;
+    td.className='mono';
+    if(v==='—'){td.style.color='var(--ink-3)';td.style.fontStyle='italic'}
+    tr.appendChild(td);
+  });
+  mtx.appendChild(tr);
+});
+const map=document.getElementById('map');
+map.appendChild(Object.assign(document.createElement('div'),{className:'hd',textContent:''}));
+map.appendChild(Object.assign(document.createElement('div'),{className:'hd',textContent:'Volume down — series'}));
+map.appendChild(Object.assign(document.createElement('div'),{className:'hd',textContent:'Volume up — parallel'}));
+for(let i=1;i<=5;i++){
+  const rl=document.createElement('div');
+  rl.className='rl';
+  rl.textContent=i+(i===1?' · bridge':i===5?' · neck':'');
+  map.appendChild(rl);
+  ['d','u'].forEach(k=>{
+    const st=STATES[i+k], b=document.createElement('button');
+    b.type='button'; b.className='cell'+(st.hum?'':' hums'); b.dataset.s=i+k;
+    b.innerHTML='<span class="cid">'+st.id+'</span><span class="cnm">'+st.name+'</span>'
+      +'<span class="cmeta"><span class="dot"></span>'+(st.hum?'quiet':'hums')+' · '+st.out+'</span>';
+    b.onclick=()=>{pos=i;pull=k;render()};
+    map.appendChild(b);
+  });
+}
+render();
+</script>
