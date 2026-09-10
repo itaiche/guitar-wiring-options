@@ -1,0 +1,292 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1430" width="1500" height="1430" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="1500" height="1430" fill="#fdfcfa"/>
+<text x="44" y="46" font-size="23" fill="#1a1815" font-weight="700" text-anchor="start">Setup 1 "Sweep" — applying it to YOUR switch</text>
+<text x="44" y="70" font-size="12.5" fill="#6b6459" font-weight="400" text-anchor="start">Orientation, meter procedure, per-lug checklist and solder order  ·  sheet 3 of 3</text>
+<rect x="44" y="96" width="700" height="336" rx="10" fill="#ffffff" stroke="#b9b1a3" stroke-width="1.8"/>
+<text x="66" y="122" font-size="11" fill="#6b6459" font-weight="700" text-anchor="start">A · HOW TO HOLD THE SWITCH</text>
+<rect x="90" y="148" width="610" height="116" rx="5" fill="#e6e2d8" stroke="#b9b1a3" stroke-width="2"/>
+<circle cx="120" cy="206.0" r="9" fill="#ffffff" stroke="#1a1815" stroke-width="1.8"/>
+<circle cx="670" cy="206.0" r="9" fill="#ffffff" stroke="#1a1815" stroke-width="1.8"/>
+<rect x="240" y="200.0" width="310" height="12" rx="3" fill="#efece6" stroke="#b9b1a3" stroke-width="1.2"/>
+<rect x="153.0" y="163" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="153.0" y="231" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="195.72727272727272" y="163" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="195.72727272727272" y="231" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="238.45454545454544" y="163" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="238.45454545454544" y="231" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="281.1818181818182" y="163" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="281.1818181818182" y="231" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="323.9090909090909" y="163" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="323.9090909090909" y="231" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="366.6363636363636" y="163" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="366.6363636363636" y="231" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="409.3636363636364" y="163" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="409.3636363636364" y="231" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="452.09090909090907" y="163" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="452.09090909090907" y="231" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="494.8181818181818" y="163" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="494.8181818181818" y="231" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="537.5454545454545" y="163" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="537.5454545454545" y="231" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="580.2727272727273" y="163" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="580.2727272727273" y="231" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="623.0" y="163" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<rect x="623.0" y="231" width="14" height="18" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.5"/>
+<text x="395.0" y="142" font-size="10" fill="#6b6459" font-weight="700" text-anchor="middle">lug tabs facing YOU  ·  24 of them, two rows of 12</text>
+<text x="120" y="282" font-size="9" fill="#a89f92" font-weight="700" text-anchor="middle">mounting ear</text>
+<text x="670" y="282" font-size="9" fill="#a89f92" font-weight="700" text-anchor="middle">mounting ear</text>
+<text x="66" y="296" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">Lugs toward you, mounting ears left and right, lever slot across the middle.</text>
+<text x="66" y="313" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">The TOP row of 12 is layer 1 (poles 1 and 2); the BOTTOM row is layer 2 (poles 3, 4).</text>
+<text x="66" y="330" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">Each row is two poles of six: a common at the OUTER end, then positions 5-4-3-2-1</text>
+<text x="66" y="347" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">counting INWARD. The two position-1 lugs of a row sit next to each other in the middle.</text>
+<text x="66" y="364" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start"></text>
+<text x="66" y="381" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">If your lugs face away from you the drawing mirrors left-to-right. That is fine —</text>
+<text x="66" y="398" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">step B settles it, and step B always wins over the picture.</text>
+<rect x="764" y="96" width="692" height="336" rx="10" fill="#f7ece2" stroke="#b9b1a3" stroke-width="1.8"/>
+<text x="786" y="122" font-size="11" fill="#6b6459" font-weight="700" text-anchor="start">B · PROVE IT WITH A METER  (do this first, always)</text>
+<text x="786" y="150" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start">1</text>
+<text x="806" y="150" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start">Meter on continuity / beep.</text>
+<text x="786" y="169" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start"></text>
+<text x="806" y="169" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">Probe two lugs in the same group of six.</text>
+<text x="786" y="188" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start">2</text>
+<text x="806" y="188" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start">Find the four COMMONS. A common is the lug that beeps to</text>
+<text x="786" y="207" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start"></text>
+<text x="806" y="207" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">exactly one other lug in its group in EVERY lever position.</text>
+<text x="786" y="226" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start"></text>
+<text x="806" y="226" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">There are four, one per group, at the outer corners.</text>
+<text x="786" y="245" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start">3</text>
+<text x="806" y="245" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start">Set the blade fully toward the BRIDGE.</text>
+<text x="786" y="264" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start"></text>
+<text x="806" y="264" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">Hold one probe on a common; find the lug that beeps.</text>
+<text x="786" y="283" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start"></text>
+<text x="806" y="283" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">That lug is POSITION 1 of that pole. Mark it.</text>
+<text x="786" y="302" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start">4</text>
+<text x="806" y="302" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start">Move the lever one detent toward the neck at a time,</text>
+<text x="786" y="321" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start"></text>
+<text x="806" y="321" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">marking 2, 3, 4, 5 as each lug beeps.</text>
+<text x="786" y="340" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start">5</text>
+<text x="806" y="340" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start">Repeat for all four commons. Masking tape and a pen.</text>
+<text x="786" y="359" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start">6</text>
+<text x="806" y="359" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start">From here on use YOUR marks, not the factory numbers.</text>
+<text x="786" y="378" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start"></text>
+<text x="806" y="378" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">The #n numbers on sheet 2 are the manufacturer's; they</text>
+<text x="786" y="397" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start"></text>
+<text x="806" y="397" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">are a cross-check, not the authority. Your marks win.</text>
+<text x="44" y="466" font-size="11.5" fill="#6b6459" font-weight="700" text-anchor="start">C · CONNECTION CHECKLIST — every one of the 24 lugs</text>
+<rect x="44" y="480" width="696" height="216" rx="8" fill="#ffffff" stroke="#b9b1a3" stroke-width="1.8"/>
+<text x="62" y="506" font-size="14" fill="#1a1815" font-weight="700" text-anchor="start">POLE 1</text>
+<text x="134" y="506" font-size="10.5" fill="#6b6459" font-weight="700" text-anchor="start">LAYER 1 · left group</text>
+<text x="62" y="526" font-size="10.5" fill="#1a1815" font-weight="700" text-anchor="start">common = your marked C  (factory #1)  →  volume lug 3  (OUT bus)</text>
+<text x="74" y="548" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start">POS</text>
+<text x="122" y="548" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start">#</text>
+<text x="172" y="548" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start">NET</text>
+<text x="232" y="548" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start">SOLDER THIS</text>
+<text x="684" y="548" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start"></text>
+<text x="74" y="570" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">1</text>
+<text x="122" y="570" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#6</text>
+<polyline points="172,566 202,566" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="210" y="570" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W1</text>
+<text x="244" y="570" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">bridge GREEN — hot</text>
+<rect x="694" y="559" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<text x="74" y="594" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">2</text>
+<text x="122" y="594" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#5</text>
+<polyline points="172,590 202,590" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="210" y="594" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W2</text>
+<text x="244" y="594" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">bridge RED + WHITE link</text>
+<rect x="694" y="583" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<text x="74" y="618" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">3</text>
+<text x="122" y="618" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#4</text>
+<polyline points="172,614 202,614" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="210" y="618" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W1</text>
+<text x="244" y="618" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">bridge GREEN — hot</text>
+<rect x="694" y="607" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<text x="74" y="642" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">4</text>
+<text x="122" y="642" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#3</text>
+<polyline points="172,638 202,638" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="210" y="642" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W1</text>
+<text x="244" y="642" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">bridge GREEN — hot</text>
+<rect x="694" y="631" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<text x="74" y="666" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">5</text>
+<text x="122" y="666" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#2</text>
+<polyline points="172,662 202,662" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="210" y="666" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W4</text>
+<text x="244" y="666" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">neck BLACK — hot</text>
+<rect x="694" y="655" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<rect x="760" y="480" width="696" height="216" rx="8" fill="#ffffff" stroke="#b9b1a3" stroke-width="1.8"/>
+<text x="778" y="506" font-size="14" fill="#1a1815" font-weight="700" text-anchor="start">POLE 2</text>
+<text x="850" y="506" font-size="10.5" fill="#6b6459" font-weight="700" text-anchor="start">LAYER 1 · right group</text>
+<text x="778" y="526" font-size="10.5" fill="#1a1815" font-weight="700" text-anchor="start">common = your marked C  (factory #12)  →  volume DPDT lug A2</text>
+<text x="790" y="548" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start">POS</text>
+<text x="838" y="548" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start">#</text>
+<text x="888" y="548" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start">NET</text>
+<text x="948" y="548" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start">SOLDER THIS</text>
+<text x="1400" y="548" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start"></text>
+<text x="790" y="570" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">1</text>
+<text x="838" y="570" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#11</text>
+<polyline points="888,566 918,566" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="926" y="570" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W2</text>
+<text x="960" y="570" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">bridge RED + WHITE link</text>
+<rect x="1410" y="559" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<text x="790" y="594" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">2</text>
+<text x="838" y="594" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#10</text>
+<polyline points="888,590 918,590" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="926" y="594" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W3</text>
+<text x="960" y="594" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">bridge BLACK — cold</text>
+<rect x="1410" y="583" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<text x="790" y="618" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">3</text>
+<text x="838" y="618" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#9</text>
+<polyline points="888,614 918,614" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="926" y="618" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W3</text>
+<text x="960" y="618" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">bridge BLACK — cold</text>
+<rect x="1410" y="607" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<text x="790" y="642" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">4</text>
+<text x="838" y="642" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#8</text>
+<polyline points="888,638 918,638" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="926" y="642" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W2</text>
+<text x="960" y="642" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">bridge RED + WHITE link</text>
+<rect x="1410" y="631" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<text x="790" y="666" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">5</text>
+<text x="838" y="666" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#7</text>
+<polyline points="888,662 918,662" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="926" y="666" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W5</text>
+<text x="960" y="666" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">neck RED + WHITE link</text>
+<rect x="1410" y="655" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<rect x="44" y="712" width="696" height="216" rx="8" fill="#ffffff" stroke="#b9b1a3" stroke-width="1.8"/>
+<text x="62" y="738" font-size="14" fill="#1a1815" font-weight="700" text-anchor="start">POLE 3</text>
+<text x="134" y="738" font-size="10.5" fill="#6b6459" font-weight="700" text-anchor="start">LAYER 2 · left group</text>
+<text x="62" y="758" font-size="10.5" fill="#1a1815" font-weight="700" text-anchor="start">common = your marked C  (factory #13)  →  volume DPDT lug B2</text>
+<text x="74" y="780" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start">POS</text>
+<text x="122" y="780" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start">#</text>
+<text x="172" y="780" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start">NET</text>
+<text x="232" y="780" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start">SOLDER THIS</text>
+<text x="684" y="780" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start"></text>
+<text x="74" y="802" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">1</text>
+<text x="122" y="802" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#18</text>
+<text x="210" y="802" font-size="11" fill="#a89f92" font-weight="700" text-anchor="start">—</text>
+<text x="244" y="802" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">leave EMPTY</text>
+<rect x="694" y="791" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<text x="74" y="826" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">2</text>
+<text x="122" y="826" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#17</text>
+<polyline points="172,822 202,822" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="210" y="826" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W4</text>
+<text x="244" y="826" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">neck BLACK — hot</text>
+<rect x="694" y="815" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<text x="74" y="850" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">3</text>
+<text x="122" y="850" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#16</text>
+<polyline points="172,846 202,846" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="210" y="850" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W4</text>
+<text x="244" y="850" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">neck BLACK — hot</text>
+<rect x="694" y="839" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<text x="74" y="874" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">4</text>
+<text x="122" y="874" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#15</text>
+<polyline points="172,870 202,870" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="210" y="874" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W5</text>
+<text x="244" y="874" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">neck RED + WHITE link</text>
+<rect x="694" y="863" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<text x="74" y="898" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">5</text>
+<text x="122" y="898" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#14</text>
+<text x="210" y="898" font-size="11" fill="#a89f92" font-weight="700" text-anchor="start">—</text>
+<text x="244" y="898" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">leave EMPTY</text>
+<rect x="694" y="887" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<rect x="760" y="712" width="696" height="216" rx="8" fill="#ffffff" stroke="#b9b1a3" stroke-width="1.8"/>
+<text x="778" y="738" font-size="14" fill="#1a1815" font-weight="700" text-anchor="start">POLE 4</text>
+<text x="850" y="738" font-size="10.5" fill="#6b6459" font-weight="700" text-anchor="start">LAYER 2 · right group</text>
+<text x="778" y="758" font-size="10.5" fill="#1a1815" font-weight="700" text-anchor="start">common = your marked C  (factory #24)  →  ground buss</text>
+<text x="790" y="780" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start">POS</text>
+<text x="838" y="780" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start">#</text>
+<text x="888" y="780" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start">NET</text>
+<text x="948" y="780" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start">SOLDER THIS</text>
+<text x="1400" y="780" font-size="9.5" fill="#6b6459" font-weight="700" text-anchor="start"></text>
+<text x="790" y="802" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">1</text>
+<text x="838" y="802" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#23</text>
+<polyline points="888,798 918,798" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="926" y="802" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W3</text>
+<text x="960" y="802" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">bridge BLACK — cold</text>
+<rect x="1410" y="791" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<text x="790" y="826" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">2</text>
+<text x="838" y="826" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#22</text>
+<polyline points="888,822 918,822" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="926" y="826" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W5</text>
+<text x="960" y="826" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">neck RED + WHITE link</text>
+<rect x="1410" y="815" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<text x="790" y="850" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">3</text>
+<text x="838" y="850" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#21</text>
+<polyline points="888,846 918,846" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="926" y="850" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W6</text>
+<text x="960" y="850" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">neck GREEN — cold</text>
+<rect x="1410" y="839" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<text x="790" y="874" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">4</text>
+<text x="838" y="874" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#20</text>
+<polyline points="888,870 918,870" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="926" y="874" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W6</text>
+<text x="960" y="874" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">neck GREEN — cold</text>
+<rect x="1410" y="863" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<text x="790" y="898" font-size="12" fill="#1a1815" font-weight="700" text-anchor="start">5</text>
+<text x="838" y="898" font-size="10" fill="#a89f92" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">#19</text>
+<polyline points="888,894 918,894" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="926" y="898" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start" font-family="ui-monospace,Menlo,Consolas,monospace">W6</text>
+<text x="960" y="898" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">neck GREEN — cold</text>
+<rect x="1410" y="887" width="14" height="14" rx="2" fill="#ffffff" stroke="#1a1815" stroke-width="1.6"/>
+<rect x="44" y="960" width="700" height="300" rx="10" fill="#ffffff" stroke="#b9b1a3" stroke-width="1.8"/>
+<text x="66" y="986" font-size="11" fill="#6b6459" font-weight="700" text-anchor="start">D · SOLDER IN THIS ORDER</text>
+<text x="66" y="1012" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start">1</text>
+<text x="86" y="1012" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">At the pickups: join bridge RED+WHITE, join neck WHITE+RED.</text>
+<text x="66" y="1036" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start"></text>
+<text x="86" y="1036" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">Solder, heatshrink, done. These never reach the switch as two wires.</text>
+<text x="66" y="1060" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start">2</text>
+<text x="86" y="1060" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">Tin all 24 lugs you will use. Skip pole 3 positions 1 and 5.</text>
+<text x="66" y="1084" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start">3</text>
+<text x="86" y="1084" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">Fit the on-switch jumpers first, while access is good:</text>
+<text x="66" y="1108" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start"></text>
+<text x="86" y="1108" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">W1 across P1 1-3-4 · W2 P1-2 to P2-1 to P2-4 · W3 P2-2 to P2-3 to P4-1</text>
+<text x="66" y="1132" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start"></text>
+<text x="86" y="1132" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">W4 P1-5 to P3-2 to P3-3 · W5 P2-5 to P3-4 to P4-2 · W6 across P4 3-4-5</text>
+<text x="66" y="1156" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start">4</text>
+<text x="86" y="1156" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">Now land the six pickup leads, one net at a time. Tick the boxes in C.</text>
+<text x="66" y="1180" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start">5</text>
+<text x="86" y="1180" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">Four commons to volume lug 3, DPDT A2, DPDT B2, ground.</text>
+<text x="66" y="1204" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start">6</text>
+<text x="86" y="1204" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">DPDT internals, then pots, tone cap, treble bleed, jack, ground buss.</text>
+<text x="66" y="1228" font-size="11.5" fill="#c62828" font-weight="700" text-anchor="start">7</text>
+<text x="86" y="1228" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">Test on the bench (panel E) BEFORE it goes in the guitar.</text>
+<rect x="764" y="960" width="692" height="300" rx="10" fill="#eaf2ec" stroke="#b9b1a3" stroke-width="1.8"/>
+<text x="786" y="986" font-size="11" fill="#6b6459" font-weight="700" text-anchor="start">E · BENCH TEST BEFORE INSTALLING</text>
+<text x="786" y="1010" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">Meter across the jack tip and sleeve, volume wide open, tone wide open.</text>
+<text x="786" y="1028" font-size="11" fill="#1a1815" font-weight="400" text-anchor="start">Expected DC resistance, for a matched ~8 k pair:</text>
+<text x="806" y="1064" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start">position 1</text>
+<text x="920" y="1064" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">vol down ~8 k</text>
+<text x="1050" y="1064" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">vol up ~4 k</text>
+<text x="806" y="1086" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start">position 2</text>
+<text x="920" y="1086" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">vol down ~8 k</text>
+<text x="1050" y="1086" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">vol up ~2 k</text>
+<text x="806" y="1108" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start">position 3</text>
+<text x="920" y="1108" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">vol down ~16 k</text>
+<text x="1050" y="1108" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">vol up ~4 k</text>
+<text x="806" y="1130" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start">position 4</text>
+<text x="920" y="1130" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">vol down ~8 k</text>
+<text x="1050" y="1130" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">vol up ~2 k</text>
+<text x="806" y="1152" font-size="11" fill="#1a1815" font-weight="700" text-anchor="start">position 5</text>
+<text x="920" y="1152" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">vol down ~8 k</text>
+<text x="1050" y="1152" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">vol up ~4 k</text>
+<text x="786" y="1188" font-size="11" fill="#c62828" font-weight="700" text-anchor="start">Any position reading OPEN or near 0 Ω is a wiring fault — find it now.</text>
+<text x="786" y="1208" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">Position 3 volume-down must be roughly double any single-pickup reading;</text>
+<text x="786" y="1226" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">that is the proof the both-humbuckers-in-series chain is intact.</text>
+<text x="44" y="1292" font-size="12" fill="#c62828" font-weight="700" text-anchor="start">ORIENTATION IS THE ONE THING THIS SHEET CANNOT KNOW.</text>
+<text x="44" y="1314" font-size="11.5" fill="#1a1815" font-weight="400" text-anchor="start">Whether position 1 sits at the left or right end depends on how the switch is mounted. Panel B settles it in five minutes and is authoritative.</text>
+<text x="44" y="1336" font-size="11.5" fill="#6b6459" font-weight="400" text-anchor="start">Sheet 1 = harness overview · sheet 2 = the switch as wired · this sheet = how to transfer it to the part in your hand.</text>
+<text x="44" y="1364" font-size="11" fill="#6b6459" font-weight="700" text-anchor="start">WIRE COLOURS  (Seymour Duncan 4-conductor code)</text>
+<polyline points="44,1382 74,1382" fill="none" stroke="#141414" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="82" y="1386" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">Black</text>
+<polyline points="162,1382 192,1382" fill="none" stroke="#8d8578" stroke-width="5.2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="162,1382 192,1382" fill="none" stroke="#ffffff" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="200" y="1386" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">White</text>
+<polyline points="280,1382 310,1382" fill="none" stroke="#c62828" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="318" y="1386" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">Red</text>
+<polyline points="398,1382 428,1382" fill="none" stroke="#1f8a3c" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="436" y="1386" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">Green</text>
+<polyline points="516,1382 546,1382" fill="none" stroke="#9a8f7a" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="7 4"/>
+<text x="554" y="1386" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">Bare shield</text>
+<polyline points="634,1382 664,1382" fill="none" stroke="#6f6f6f" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="672" y="1386" font-size="11" fill="#6b6459" font-weight="400" text-anchor="start">Ground buss</text>
+<text x="44" y="1410" font-size="11" fill="#a89f92" font-weight="400" text-anchor="start">Crossing wires are NOT connected unless a solid junction dot is shown.</text>
+</svg>

@@ -231,7 +231,7 @@ Published at **[itaiche.github.io/guitar-wiring-options](https://itaiche.github.
 | [spec.md](spec.md) | This document |
 | [docs/pole-matrix.md](docs/pole-matrix.md) | Contact-by-contact verification. Read before soldering. |
 | [bom.md](bom.md) | Parts and prices |
-| [diagrams/](diagrams/) | Shop-style wiring diagrams |
+| [diagrams/](diagrams/) | Shop-style wiring diagrams — Setup 1 is three sheets: harness overview, super switch as wired, and the build sheet (orientation + meter procedure + 24-lug checklist) |
 | [tools/gen_diagrams.py](tools/gen_diagrams.py) | Regenerates the diagrams |
 
 ## Provenance

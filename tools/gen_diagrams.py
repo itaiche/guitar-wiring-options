@@ -521,6 +521,353 @@ def setup2():
         "setup2-curated.svg")
 
 
+# ===========================================================================
+#  Setup 1 — super-switch detail sheet
+# ===========================================================================
+NETS = [
+    # id, colour, label, lugs [(pole, lug)] with lug 0 = common, goes-to note
+    ("W1", "green", "BG",    "bridge GREEN — hot",      [(1,1),(1,3),(1,4)]),
+    ("W2", "red",   "BR+BW", "bridge RED + WHITE link", [(1,2),(2,1),(2,4)]),
+    ("W3", "black", "BBk",   "bridge BLACK — cold",     [(2,2),(2,3),(4,1)]),
+    ("W4", "black", "NBk",   "neck BLACK — hot",        [(1,5),(3,2),(3,3)]),
+    ("W5", "red",   "NR+NW", "neck RED + WHITE link",   [(2,5),(3,4),(4,2)]),
+    ("W6", "green", "NG",    "neck GREEN — cold",       [(4,3),(4,4),(4,5)]),
+]
+COMMONS = [
+    (1, "OUT bus → VOLUME lug 3"),
+    (2, "→ volume DPDT  lug A2"),
+    (3, "→ volume DPDT  lug B2"),
+    (4, "→ GROUND buss"),
+]
+POLE_JOB = {1: "hot select", 2: "cold select / DPDT pole A",
+            3: "second source / DPDT pole B", 4: "ground select"}
+
+
+def setup1_switch():
+    """Physical layout per the Oak Grigsby / Fender 4P5T manufacturer drawing:
+    two rows of 12 lugs, mirrored, commons at the four outer corners.
+    Top row  = pole 1 (left) + pole 2 (right):  0 5 4 3 2 1 | 5 4 3 2 1 0
+    Bottom   = pole 3 (left) + pole 4 (right):  same
+    Factory lug numbers 1-24: layer 1 = 1-12 (commons 1, 12),
+    layer 2 = 13-24 (commons 13, 24)."""
+    W, H = 1500, 1150
+    d = Draw(W, H, 'Setup 1 "Sweep" — super switch, as wired',
+             "Fender 0992251000 / Oak Grigsby 4-pole 5-way  ·  lug layout per the manufacturer "
+             "drawing  ·  sheet 2 of 2")
+
+    COLS, X0, XS = 12, 214, 80.0
+    ROW_T, ROW_B = 432, 548
+    colx = lambda c: X0 + c * XS
+
+    def loc(pole, pos):
+        """pos 0 = common. Returns (x, y, factory_lug_number)."""
+        row = ROW_T if pole in (1, 2) else ROW_B
+        if pole in (1, 3):
+            col = 0 if pos == 0 else 6 - pos
+        else:
+            col = 11 if pos == 0 else 11 - pos
+        base = {1: 0, 2: 0, 3: 12, 4: 12}[pole]
+        return colx(col), row, base + col + 1
+
+    # ---------------- info boxes ----------------
+    d.box(44, 96, 545, 176, r=10, fill="#f2efe8")
+    d.text(62, 122, "WHAT EACH POSITION GIVES YOU", 11, MUTE, 700)
+    d.text(62, 146, "BLADE", 10, MUTE, 700)
+    d.text(210, 146, "VOLUME DOWN — series", 10, MUTE, 700)
+    d.text(400, 146, "VOLUME UP — parallel", 10, MUTE, 700)
+    for i, (b, dn, up) in enumerate((
+            ("1  bridge", "bridge humbucker", "bridge slug split *"),
+            ("2", "outer coils in series", "outer coils parallel"),
+            ("3", "both humbuckers series +6dB", "both humbuckers parallel"),
+            ("4", "inner coils in series", "inner coils parallel"),
+            ("5  neck", "neck humbucker", "neck screw split *"))):
+        y = 168 + i * 19
+        d.text(62, y, b, 10.5, INK, 700)
+        d.text(210, y, dn, 10.5, INK, 400)
+        d.text(400, y, up, 10.5, INK, 400)
+    d.note(62, 266, "* the only two positions that hum", 9.5, FAINT, 700)
+
+    d.box(609, 96, 400, 176, r=10, fill="#f2efe8")
+    d.text(627, 122, "THE PART", 11, MUTE, 700)
+    for i, line in enumerate([
+            "48.2 mm long · 41 mm mounting centres",
+            "#6-32 screws · 9.5 mm wafer stack",
+            "24 lugs in two rows of 12.",
+            "",
+            "Layer 1 (lugs 1-12)  = poles 1 and 2",
+            "Layer 2 (lugs 13-24) = poles 3 and 4",
+            "Commons are lugs 1, 12, 13 and 24 —",
+            "the four OUTER corners."]):
+        d.note(627, 146 + i * 15, line, 10.5, INK if "Commons" in line else FAINT,
+               700 if "Commons" in line else 400)
+
+    d.box(1029, 96, 427, 176, r=10, fill="#f7ece2")
+    d.text(1047, 122, "CONFIRM BEFORE SOLDERING", 11, MUTE, 700)
+    for i, line in enumerate([
+            "This is the Oak Grigsby / Fender layout.",
+            "A Schaller Megaswitch M substitute uses a",
+            "completely different terminal scheme —",
+            "do not use this sheet for one.",
+            "",
+            "Meter check: a COMMON beeps to exactly one",
+            "other lug in its group in every detent.",
+            "Probe it and walk the lever to number the",
+            "rest."]):
+        d.note(1047, 146 + i * 15, line, 10.5, FAINT)
+
+    # ---------------- switch body ----------------
+    d.box(150, 392, 990, 196, r=6, fill="#e6e2d8", sw=2)
+    for ex in (180, 1110):
+        d.o.append(f'<circle cx="{ex}" cy="490" r="11" fill="{PANEL}" stroke="{INK}" stroke-width="2"/>')
+        d.o.append(f'<circle cx="{ex}" cy="490" r="4" fill="{EDGE}"/>')
+    d.o.append(f'<rect x="320" y="481" width="600" height="14" rx="4" fill="{BODY}" '
+               f'stroke="{EDGE}" stroke-width="1.4"/>')
+    d.text(620, 476, "actuator / lever slot", 9, FAINT, 700, "middle")
+    d.o.append(f'<line x1="{colx(5)+XS/2}" y1="400" x2="{colx(5)+XS/2}" y2="580" '
+               f'stroke="{EDGE}" stroke-width="1.4" stroke-dasharray="5 5"/>')
+
+    for pole in (1, 2, 3, 4):
+        for pos in range(0, 6):
+            x, y, lug = loc(pole, pos)
+            d.o.append(f'<rect x="{x-11}" y="{y-13}" width="22" height="26" rx="3" '
+                       f'fill="{PANEL}" stroke="{INK}" stroke-width="2"/>')
+            d.o.append(f'<circle cx="{x}" cy="{y}" r="4.5" fill="{BODY}" stroke="{EDGE}" stroke-width="1"/>')
+            lab = "C" if pos == 0 else str(pos)
+            ly = y - 20 if pole in (1, 2) else y + 28
+            d.text(x - 15, ly, lab, 12, INK, 700, "end")
+            d.text(x + 15, ly, f"#{lug}", 8.5, FAINT, 700, "start", mono=True)
+
+    lgc, rgc = colx(2.5), colx(8.5)
+    d.text(lgc, ROW_T + 34, "POLE 1", 12.5, INK, 700, "middle")
+    d.text(rgc, ROW_T + 34, "POLE 2", 12.5, INK, 700, "middle")
+    d.text(lgc, ROW_B - 24, "POLE 3", 12.5, INK, 700, "middle")
+    d.text(rgc, ROW_B - 24, "POLE 4", 12.5, INK, 700, "middle")
+    d.text(colx(5.5), 380, "LAYER 1  ·  lugs 1-12  ·  poles 1 + 2", 9.5, FAINT, 700, "middle")
+    d.text(colx(5.5), 606, "LAYER 2  ·  lugs 13-24  ·  poles 3 + 4", 9.5, FAINT, 700, "middle")
+
+    # ---------------- nets ----------------
+    TOPB, BOTB, LEFTX, RIGHTX = 370, 618, 126, 1166
+    for k, (nid, col, short, longlab, lugs) in enumerate(NETS):
+        lt, lb = TOPB - k * 11, BOTB + k * 11
+        tops = [loc(p, l) for p, l in lugs if p in (1, 2)]
+        bots = [loc(p, l) for p, l in lugs if p in (3, 4)]
+        for pts, lane, up in ((tops, lt, True), (bots, lb, False)):
+            if not pts:
+                continue
+            for x, y, lug in pts:
+                d.wire([(x, y + (-13 if up else 13)), (x, lane)], col, 3.0)
+                d.dot(x, lane, 5, WIRE[col][0] if col != "white" else "#8d8578")
+                d.text(x + 14, lane + (-7 if up else 13), nid, 9.5, INK, 700, "start", mono=True)
+            d.wire([(min(p[0] for p in pts), lane), (max(p[0] for p in pts), lane)], col, 3.0)
+        if tops and bots:
+            allx = [p[0] for p in tops + bots]
+            side = LEFTX if sum(allx) / len(allx) < colx(5.5) else RIGHTX
+            d.wire([(min(p[0] for p in tops) if side == LEFTX else max(p[0] for p in tops), lt),
+                    (side, lt), (side, lb),
+                    (min(p[0] for p in bots) if side == LEFTX else max(p[0] for p in bots), lb)],
+                   col, 3.0)
+
+    # commons out
+    for pole, dest, side in ((1, "→ VOL lug 3", "L"), (2, "→ DPDT A2", "R"),
+                             (3, "→ DPDT B2", "L"), (4, "→ GROUND", "R")):
+        x, y, lug = loc(pole, 0)
+        ex = 108 if side == "L" else 1182
+        d.wire([(x + (-11 if side == "L" else 11), y), (ex, y)], "link", 2.8)
+        d.text(ex + (-6 if side == "L" else 6), y + 4, dest, 11, INK, 700,
+               "end" if side == "L" else "start")
+
+    # ---------------- net key ----------------
+    ky = 700
+    d.box(44, ky, 900, 214, r=8, fill=PANEL)
+    d.text(66, ky + 26, "THE SIX NETS — lugs sharing an ID are jumpered together", 11.5, MUTE, 700)
+    for lbl, x in (("ID", 122), ("WIRE", 166), ("POLE-POSITION", 370), ("FACTORY LUG #", 610),
+                   ("WATCH OUT", 780)):
+        d.text(x, ky + 52, lbl, 10, MUTE, 700)
+    for k, (nid, col, short, longlab, lugs) in enumerate(NETS):
+        y = ky + 78 + k * 22
+        d.wire([(66, y - 4), (104, y - 4)], col, 3.0)
+        d.text(122, y, nid, 11, INK, 700, mono=True)
+        d.text(166, y, longlab, 11, INK, 400)
+        d.text(370, y, "  ".join(f"P{p}-{l}" for p, l in lugs), 11, INK, 700, mono=True)
+        d.text(610, y, "  ".join(f"#{loc(p, l)[2]}" for p, l in lugs), 11, INK, 700, mono=True)
+        rows_used = sorted({1 if p in (1, 2) else 2 for p, _ in lugs})
+        d.text(780, y, "crosses layers" if len(rows_used) > 1 else "one layer", 11,
+               WIRE["red"][0] if len(rows_used) > 1 else MUTE, 700 if len(rows_used) > 1 else 400)
+    d.text(66, ky + 200, "Pole 3 positions 1 and 5 (lugs #18 and #14) stay EMPTY.", 10.5, FAINT, 700)
+
+    # ---------------- mistakes ----------------
+    d.box(970, ky, 486, 214, r=10, fill="#f7e9e6")
+    d.text(992, ky + 26, "THE THREE MISTAKES TO AVOID", 11, MUTE, 700)
+    for i, line in enumerate([
+            "1  TWO BLACKS, TWO REDS, TWO GREENS. W3 is bridge",
+            "   black, W4 is neck black, and they go to different",
+            "   poles. Same for reds W2/W5 and greens W1/W6.",
+            "   Label every lead before it reaches the switch.",
+            "2  THREE NETS CROSS BETWEEN THE TWO LAYERS —",
+            "   W3, W4 and W5. Those jumpers run around the end",
+            "   of the switch, not through it.",
+            "3  POSITION 1 IS THE INNERMOST LUG, not the outer one.",
+            "   The rows are mirrored: commons sit at the four",
+            "   outer corners and the numbering counts inward."]):
+        b = line[:1].isdigit()
+        d.note(992, ky + 52 + i * 15, line, 10, WIRE["red"][0] if b else FAINT, 700 if b else 400)
+
+    d.note(44, 946, "COMMONS — pole 1 (#1) → volume lug 3 · pole 2 (#12) → DPDT A2 · "
+                    "pole 3 (#13) → DPDT B2 · pole 4 (#24) → ground buss.", 11.5, INK, 700)
+    d.note(44, 968, "DPDT (volume push-pull):  DOWN = A2→A1 with A1 jumpered to B2 (series).   "
+                    "UP = A2→A3→ground and B2→B3→OUT bus (parallel).", 11.5, MUTE)
+    d.note(44, 990, "BR+BW and NW+NR are soldered together AT THE PICKUP and taped — not switched. "
+                    "W2 and W5 arrive as one conductor each.", 11.5, MUTE)
+    legend(d, 44, 1020)
+    return d.save(os.path.join(OUT, "setup1-superswitch.svg"))
+
+
+
+# ===========================================================================
+#  Setup 1 — sheet 3: applying it to a real switch
+# ===========================================================================
+def setup1_build():
+    W, H = 1500, 1430
+    d = Draw(W, H, 'Setup 1 "Sweep" — applying it to YOUR switch',
+             "Orientation, meter procedure, per-lug checklist and solder order  ·  sheet 3 of 3")
+
+    net_of, wire_of = {}, {}
+    for nid, col, short, longlab, lugs in NETS:
+        for pl in lugs:
+            net_of[pl] = nid
+            wire_of[pl] = (col, short, longlab)
+    dest = {1: "volume lug 3  (OUT bus)", 2: "volume DPDT lug A2",
+            3: "volume DPDT lug B2", 4: "ground buss"}
+    side = {1: "LAYER 1 · left group", 2: "LAYER 1 · right group",
+            3: "LAYER 2 · left group", 4: "LAYER 2 · right group"}
+    comlug = {1: 1, 2: 12, 3: 13, 4: 24}
+
+    def factory(pole, pos):
+        col = (0 if pos == 0 else 6 - pos) if pole in (1, 3) else (11 if pos == 0 else 11 - pos)
+        return {1: 0, 2: 0, 3: 12, 4: 12}[pole] + col + 1
+
+    # ---------- A: orientation ----------
+    d.box(44, 96, 700, 336, r=10, fill=PANEL)
+    d.text(66, 122, "A · HOW TO HOLD THE SWITCH", 11, MUTE, 700)
+    bx, by, bw, bh = 90, 148, 610, 116
+    d.box(bx, by, bw, bh, r=5, fill="#e6e2d8", sw=2)
+    for ex in (bx + 30, bx + bw - 30):
+        d.o.append(f'<circle cx="{ex}" cy="{by+bh/2}" r="9" fill="{PANEL}" stroke="{INK}" stroke-width="1.8"/>')
+    d.o.append(f'<rect x="{bx+150}" y="{by+bh/2-6}" width="310" height="12" rx="3" '
+               f'fill="{BODY}" stroke="{EDGE}" stroke-width="1.2"/>')
+    for i in range(12):
+        lx = bx + 70 + i * (bw - 140) / 11
+        for yy in (by + 24, by + bh - 24):
+            d.o.append(f'<rect x="{lx-7}" y="{yy-9}" width="14" height="18" rx="2" '
+                       f'fill="{PANEL}" stroke="{INK}" stroke-width="1.5"/>')
+    d.text(bx + bw / 2, by - 6, "lug tabs facing YOU  ·  24 of them, two rows of 12",
+           10, MUTE, 700, "middle")
+    d.text(bx + 30, by + bh + 18, "mounting ear", 9, FAINT, 700, "middle")
+    d.text(bx + bw - 30, by + bh + 18, "mounting ear", 9, FAINT, 700, "middle")
+    for i, line in enumerate([
+            "Lugs toward you, mounting ears left and right, lever slot across the middle.",
+            "The TOP row of 12 is layer 1 (poles 1 and 2); the BOTTOM row is layer 2 (poles 3, 4).",
+            "Each row is two poles of six: a common at the OUTER end, then positions 5-4-3-2-1",
+            "counting INWARD. The two position-1 lugs of a row sit next to each other in the middle.",
+            "",
+            "If your lugs face away from you the drawing mirrors left-to-right. That is fine —",
+            "step B settles it, and step B always wins over the picture."]):
+        d.note(66, 296 + i * 17, line, 11, INK if i < 4 else FAINT, 400)
+
+    # ---------- B: meter procedure ----------
+    d.box(764, 96, 692, 336, r=10, fill="#f7ece2")
+    d.text(786, 122, "B · PROVE IT WITH A METER  (do this first, always)", 11, MUTE, 700)
+    for i, (n, line) in enumerate([
+            ("1", "Meter on continuity / beep."),
+            ("",  "Probe two lugs in the same group of six."),
+            ("2", "Find the four COMMONS. A common is the lug that beeps to"),
+            ("",  "exactly one other lug in its group in EVERY lever position."),
+            ("",  "There are four, one per group, at the outer corners."),
+            ("3", "Set the blade fully toward the BRIDGE."),
+            ("",  "Hold one probe on a common; find the lug that beeps."),
+            ("",  "That lug is POSITION 1 of that pole. Mark it."),
+            ("4", "Move the lever one detent toward the neck at a time,"),
+            ("",  "marking 2, 3, 4, 5 as each lug beeps."),
+            ("5", "Repeat for all four commons. Masking tape and a pen."),
+            ("6", "From here on use YOUR marks, not the factory numbers."),
+            ("",  "The #n numbers on sheet 2 are the manufacturer's; they"),
+            ("",  "are a cross-check, not the authority. Your marks win.")]):
+        d.text(786, 150 + i * 19, n, 11.5, WIRE["red"][0], 700)
+        d.note(806, 150 + i * 19, line, 11, INK if n else FAINT, 700 if n else 400)
+
+    # ---------- C: per-lug checklist ----------
+    d.text(44, 466, "C · CONNECTION CHECKLIST — every one of the 24 lugs", 11.5, MUTE, 700)
+    for bi, pole in enumerate((1, 2, 3, 4)):
+        cx = 44 + (bi % 2) * 716
+        cy = 480 + (bi // 2) * 232
+        d.box(cx, cy, 696, 216, r=8, fill=PANEL)
+        d.text(cx + 18, cy + 26, f"POLE {pole}", 14, INK, 700)
+        d.text(cx + 90, cy + 26, side[pole], 10.5, MUTE, 700)
+        d.text(cx + 18, cy + 46, f"common = your marked C  (factory #{comlug[pole]})  →  {dest[pole]}",
+               10.5, INK, 700)
+        for lbl, x in (("POS", 30), ("#", 78), ("NET", 128), ("SOLDER THIS", 188), ("", 640)):
+            d.text(cx + x, cy + 68, lbl, 9.5, MUTE, 700)
+        for pos in range(1, 6):
+            y = cy + 90 + (pos - 1) * 24
+            nid = net_of.get((pole, pos))
+            d.text(cx + 30, y, str(pos), 12, INK, 700)
+            d.text(cx + 78, y, f"#{factory(pole,pos)}", 10, FAINT, 700, mono=True)
+            if nid:
+                col, short, longlab = wire_of[(pole, pos)]
+                d.wire([(cx + 128, y - 4), (cx + 158, y - 4)], col, 3.0)
+                d.text(cx + 166, y, nid, 11, INK, 700, mono=True)
+                d.text(cx + 200, y, longlab, 11, INK, 400)
+            else:
+                d.text(cx + 166, y, "—", 11, FAINT, 700)
+                d.text(cx + 200, y, "leave EMPTY", 11, FAINT, 400)
+            d.o.append(f'<rect x="{cx+650}" y="{y-11}" width="14" height="14" rx="2" '
+                       f'fill="{PANEL}" stroke="{INK}" stroke-width="1.6"/>')
+
+    # ---------- D: solder order ----------
+    d.box(44, 960, 700, 300, r=10, fill=PANEL)
+    d.text(66, 986, "D · SOLDER IN THIS ORDER", 11, MUTE, 700)
+    for i, (n, line) in enumerate([
+            ("1", "At the pickups: join bridge RED+WHITE, join neck WHITE+RED."),
+            ("",  "Solder, heatshrink, done. These never reach the switch as two wires."),
+            ("2", "Tin all 24 lugs you will use. Skip pole 3 positions 1 and 5."),
+            ("3", "Fit the on-switch jumpers first, while access is good:"),
+            ("",  "W1 across P1 1-3-4 · W2 P1-2 to P2-1 to P2-4 · W3 P2-2 to P2-3 to P4-1"),
+            ("",  "W4 P1-5 to P3-2 to P3-3 · W5 P2-5 to P3-4 to P4-2 · W6 across P4 3-4-5"),
+            ("4", "Now land the six pickup leads, one net at a time. Tick the boxes in C."),
+            ("5", "Four commons to volume lug 3, DPDT A2, DPDT B2, ground."),
+            ("6", "DPDT internals, then pots, tone cap, treble bleed, jack, ground buss."),
+            ("7", "Test on the bench (panel E) BEFORE it goes in the guitar.")]):
+        d.text(66, 1012 + i * 24, n, 11.5, WIRE["red"][0], 700)
+        d.note(86, 1012 + i * 24, line, 11, INK if n else FAINT, 400)
+
+    # ---------- E: test ----------
+    d.box(764, 960, 692, 300, r=10, fill="#eaf2ec")
+    d.text(786, 986, "E · BENCH TEST BEFORE INSTALLING", 11, MUTE, 700)
+    d.note(786, 1010, "Meter across the jack tip and sleeve, volume wide open, tone wide open.",
+           11, INK, 400)
+    d.note(786, 1028, "Expected DC resistance, for a matched ~8 k pair:", 11, INK, 400)
+    for i, (pos, dn, up) in enumerate([
+            ("1", "~8 k", "~4 k"), ("2", "~8 k", "~2 k"), ("3", "~16 k", "~4 k"),
+            ("4", "~8 k", "~2 k"), ("5", "~8 k", "~4 k")]):
+        y = 1064 + i * 22
+        d.text(806, y, f"position {pos}", 11, INK, 700)
+        d.text(920, y, f"vol down {dn}", 11, MUTE)
+        d.text(1050, y, f"vol up {up}", 11, MUTE)
+    d.note(786, 1188, "Any position reading OPEN or near 0 Ω is a wiring fault — find it now.",
+           11, WIRE["red"][0], 700)
+    d.note(786, 1208, "Position 3 volume-down must be roughly double any single-pickup reading;",
+           11, FAINT)
+    d.note(786, 1226, "that is the proof the both-humbuckers-in-series chain is intact.", 11, FAINT)
+
+    d.note(44, 1292, "ORIENTATION IS THE ONE THING THIS SHEET CANNOT KNOW.", 12, WIRE["red"][0], 700)
+    d.note(44, 1314, "Whether position 1 sits at the left or right end depends on how the switch is "
+                     "mounted. Panel B settles it in five minutes and is authoritative.", 11.5, INK)
+    d.note(44, 1336, "Sheet 1 = harness overview · sheet 2 = the switch as wired · this sheet = "
+                     "how to transfer it to the part in your hand.", 11.5, MUTE)
+    legend(d, 44, 1364)
+    return d.save(os.path.join(OUT, "setup1-build.svg"))
+
+
 if __name__ == "__main__":
-    for p in (setup1(), setup2(), setup3()):
+    for p in (setup1(), setup1_switch(), setup1_build(), setup2(), setup3()):
         print("wrote", os.path.relpath(p))

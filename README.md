@@ -15,7 +15,7 @@ hum-cancelling.
 | [spec.md](spec.md) | Sound taxonomy, vendor survey, three setups, build details |
 | [docs/pole-matrix.md](docs/pole-matrix.md) | Contact-by-contact verification. **Read before soldering.** |
 | [bom.md](bom.md) | Parts, part numbers, prices |
-| [diagrams/](diagrams/) | Shop-style wiring schematics (SVG) |
+| [diagrams/](diagrams/) | Shop-style schematics (SVG). Setup 1 is three sheets: `setup1-sweep.svg` (harness), `setup1-superswitch.svg` (the switch as wired), `setup1-build.svg` (orientation, meter procedure, 24-lug checklist, solder order) |
 | [tools/gen_diagrams.py](tools/gen_diagrams.py) | Regenerates the diagrams: `python3 tools/gen_diagrams.py` |
 
 Verified on paper, not yet on a bench.
